@@ -116,45 +116,11 @@ function initMap() {
     // Lanciani will be lazy-loaded in setMapLayer
     lancianiLayer = L.layerGroup();
 
-    // Falda (Distortable)
-    const faldaCorners = [
-        L.latLng(41.92111959572856, 12.50420093536377),
-        L.latLng(41.87572834776342, 12.522311210632326),
-        L.latLng(41.91115609024473, 12.43459224700928),
-        L.latLng(41.86077188073308, 12.457165718078615)
-    ];
-    faldaLayer = L.distortableImageOverlay('assets/falda/falda.jpg', {
-        corners: faldaCorners, opacity: 1, editable: false, mode: 'lock'
-    });
-    faldaLayer.on('load', () => hideLoader());
-
     nolliLayer = L.tileLayer('https://stacks.stanford.edu/file/nn217br6628/{z}/{x}/{y}.png', { attribution: 'Nolli 1748' });
     nolliLayer.on('loading', () => showLoader());
     nolliLayer.on('load', () => hideLoader());
 
-    // Platner (Distortable)
-    const platnerCorners = [
-        L.latLng(41.9140, 12.4550),
-        L.latLng(41.8780, 12.5180),
-        L.latLng(41.9080, 12.4400),
-        L.latLng(41.8650, 12.4900)
-    ];
-    platnerLayer = L.distortableImageOverlay('assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
-        corners: platnerCorners, opacity: 1, editable: false, mode: 'lock'
-    });
-    platnerLayer.on('load', () => hideLoader());
-
-    // Kiepert (Distortable)
-    const kiepertCorners = [
-        L.latLng(41.9110, 12.4663),
-        L.latLng(41.9110, 12.5188),
-        L.latLng(41.8440, 12.4663),
-        L.latLng(41.8440, 12.5188)
-    ];
-    kiepertLayer = L.distortableImageOverlay('assets/Kiepert/11690011.jpg', {
-        corners: kiepertCorners, opacity: 1, editable: false, mode: 'lock'
-    });
-    kiepertLayer.on('load', () => hideLoader());
+    // Standard layers are init, distortable layers are lazy-init in setMapLayer
 
     map = L.map('map', {
         center: [41.8902, 12.4922], zoom: 16,
@@ -516,12 +482,27 @@ function setMapLayer(index) {
         l = lancianiLayer;
         loadLanciani();
     } else if (index === 3) {
+        if (faldaLayer) map.removeLayer(faldaLayer);
+        faldaLayer = L.distortableImageOverlay('assets/falda/falda.jpg', {
+            corners: [L.latLng(41.9211, 12.5042), L.latLng(41.8757, 12.5223), L.latLng(41.9111, 12.4345), L.latLng(41.8607, 12.4571)],
+            opacity: 1, editable: false, mode: 'lock'
+        }).on('load', () => hideLoader());
         l = faldaLayer;
     } else if (index === 4) {
         l = nolliLayer;
     } else if (index === 5) {
+        if (platnerLayer) map.removeLayer(platnerLayer);
+        platnerLayer = L.distortableImageOverlay('assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
+            corners: [L.latLng(41.9140, 12.4550), L.latLng(41.8780, 12.5180), L.latLng(41.9080, 12.4400), L.latLng(41.8650, 12.4900)],
+            opacity: 1, editable: false, mode: 'lock'
+        }).on('load', () => hideLoader());
         l = platnerLayer;
     } else if (index === 6) {
+        if (kiepertLayer) map.removeLayer(kiepertLayer);
+        kiepertLayer = L.distortableImageOverlay('assets/Kiepert/11690011.jpg', {
+            corners: [L.latLng(41.9110, 12.4663), L.latLng(41.9110, 12.5188), L.latLng(41.8440, 12.4663), L.latLng(41.8440, 12.5188)],
+            opacity: 1, editable: false, mode: 'lock'
+        }).on('load', () => hideLoader());
         l = kiepertLayer;
     }
 
