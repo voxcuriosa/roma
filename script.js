@@ -439,26 +439,6 @@ function setupEventListeners() {
     };
     if (closeAbout) closeAbout.onclick = () => aboutModal.style.display = 'none';
 
-    // Edit Mode
-    const editBtn = document.getElementById('edit-map-btn');
-    if (editBtn) editBtn.onclick = () => {
-        const layers = { 3: faldaLayer, 5: platnerLayer, 6: kiepertLayer };
-        const l = layers[activeLayerIndex];
-        if (!l) { alert("Velg Falda, Platner eller Kiepert først."); return; }
-        
-        if (l.editing && l.editing.enabled()) {
-            const pin = prompt("Tast PIN for å logge ut (endringer lagres manuelt i koden for nå):");
-            l.editing.disable();
-            editBtn.innerHTML = '<i class="fas fa-edit"></i> Finjuster Kart';
-            console.log("Nye hjørner:", JSON.stringify(l.getCorners()));
-        } else if (l.editing) {
-            l.editing.enable();
-            editBtn.innerHTML = '<i class="fas fa-save"></i> Avslutt Justering';
-            document.getElementById('layers-menu').classList.remove('show');
-            alert("Dra i hjørnene på kartet. Nye koordinater skrives til konsollen (F12).");
-        }
-    };
-
     window.onclick = (e) => {
         if (e.target === aboutModal) aboutModal.style.display = 'none';
         if (e.target === document.getElementById('detail-modal')) document.getElementById('detail-modal').style.display = 'none';
