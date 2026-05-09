@@ -8,7 +8,8 @@ const knownPoints = {
 const layerInfo = {
     2: "<strong>Rodolfo Lanciani (1901)</strong><br>Forma Urbis Romae. A monumental work mapping ancient ruins onto the 19th-century city. Source: <a href='https://mappingrome.com/' target='_blank'>Mapping Rome project</a>.",
     3: "<strong>G.B. Falda (1676)</strong><br>Nova Pianta di Roma. A detailed bird's-eye view of Baroque Rome. Source: <a href='https://scholarsbank.uoregon.edu/xmlui/handle/1794/23308' target='_blank'>University of Oregon</a>.",
-    4: "<strong>Giambattista Nolli (1748)</strong><br>Nuova Pianta di Roma. The first accurate ground-plan map of the city. Source: <a href='http://nolli.uoregon.edu/' target='_blank'>Nolli Map Website</a>."
+    4: "<strong>Giambattista Nolli (1748)</strong><br>Nuova Pianta di Roma. The first accurate ground-plan map of the city. Source: <a href='http://nolli.uoregon.edu/' target='_blank'>Nolli Map Website</a>.",
+    5: "<strong>Samuel Ball Platner (1911)</strong><br>Ancient Rome. From 'The Topography and Monuments of Ancient Rome'. Source: <a href='https://commons.wikimedia.org/w/index.php?curid=954235' target='_blank'>Wikimedia (Public Domain)</a>."
 };
 
 // Historical Glimpse Data (Piranesi & Old Photos)
@@ -61,9 +62,8 @@ const historicalGlimpses = [
 ];
 
 let map, pointsData = [], markers = [];
-let piranesiMetadata = [];
-let vintageMetadata = [];
-let lancianiLayer, faldaLayer, nolliLayer, satelliteLayer, topoLayer;
+let activeLayerIndex = 0;
+let satelliteLayer, topoLayer, lancianiLayer, faldaLayer, nolliLayer, platnerLayer;
 let userMarker, lastUserLatLng, isFollowingUser = false;
 let selectedCategory = "";
 let showAllPoints = true;
@@ -130,6 +130,18 @@ function initMap() {
     nolliLayer.on('loading', () => showLoader());
     nolliLayer.on('load', () => hideLoader());
 
+    // Platner (Distortable)
+    const platnerCorners = [
+        L.latLng(41.9140, 12.4550),
+        L.latLng(41.8780, 12.5180),
+        L.latLng(41.9080, 12.4400),
+        L.latLng(41.8650, 12.4900)
+    ];
+    platnerLayer = L.distortableImageOverlay('assets/falda/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
+        corners: platnerCorners, opacity: 1, editable: false, mode: 'lock'
+    });
+    platnerLayer.on('load', () => hideLoader());
+
     map = L.map('map', {
         center: [41.8902, 12.4922], zoom: 16,
         layers: [satelliteLayer], zoomControl: false,
@@ -144,7 +156,7 @@ function initMap() {
     const mapSlider = document.getElementById('map-opacity-slider');
     mapSlider.oninput = (e) => {
         const v = e.target.value / 100;
-        [lancianiLayer, faldaLayer, nolliLayer].forEach(l => {
+        [lancianiLayer, faldaLayer, nolliLayer, platnerLayer].forEach(l => {
             if (map.hasLayer(l)) {
                 if (l.setOpacity) l.setOpacity(v);
                 else if (l.eachLayer) l.eachLayer(part => part.setOpacity && part.setOpacity(v));
@@ -461,50 +473,47 @@ function loadLanciani() {
 
 function setMapLayer(index) {
     if (index === 2) loadLanciani();
-    const histLayers = [lancianiLayer, faldaLayer, nolliLayer, topoLayer];
+    const histLayers = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, topoLayer];
     histLayers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
 
-    loadedPartsCount = 0;
-    if (index >= 2) showLoader();
-
+    activeLayerIndex = index;
+    
+    // Add current layer
     if (index === 0) {
-        if (!map.hasLayer(satelliteLayer)) satelliteLayer.addTo(map);
-        hideLoader();
+        map.addLayer(satelliteLayer);
     } else if (index === 1) {
-        topoLayer.addTo(map);
-        hideLoader();
+        map.addLayer(topoLayer);
     } else {
-        if (!map.hasLayer(satelliteLayer)) satelliteLayer.addTo(map);
-        const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer];
-        if (layers[index]) layers[index].addTo(map);
-        
-        const v = document.getElementById('map-opacity-slider').value / 100;
-        const l = layers[index];
-        if (l && l.setOpacity) l.setOpacity(v);
-        else if (l && l.eachLayer) l.eachLayer(p => p.setOpacity && p.setOpacity(v));
+        const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer];
+        if (layers[index]) map.addLayer(layers[index]);
     }
 
-    // --- REINFORCE ATTRIBUTION ---
+    // Apply current opacity
+    const v = document.getElementById('map-opacity-slider').value / 100;
+    const currentLayer = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer][index];
+    if (currentLayer) {
+        if (currentLayer.setOpacity) currentLayer.setOpacity(v);
+        else if (currentLayer.eachLayer) currentLayer.eachLayer(p => p.setOpacity && p.setOpacity(v));
+    }
+
+    // Attribution
     const attrBox = document.getElementById('custom-attribution');
     if (layerInfo[index]) {
         attrBox.innerHTML = layerInfo[index];
         attrBox.style.display = 'block';
     } else {
-        attrBox.innerHTML = "<strong>Modern Map</strong><br>&copy; Google Satellite / OpenStreetMap";
-        attrBox.style.display = 'block';
+        attrBox.style.display = 'none';
     }
 
     // Slider visibility
     const opacityTool = document.querySelector('.opacity-tool-group');
-    if (index >= 2 && index <= 4) {
+    if (index >= 2) {
         opacityTool.style.display = 'flex';
     } else {
         opacityTool.style.display = 'none';
     }
 
-    activeLayerIndex = index;
     updateURL();
-
     document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
     const items = document.querySelectorAll('.menu-item');
     if (items[index]) items[index].classList.add('active');
