@@ -75,9 +75,17 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             4. Trykk Lagre når du er ferdig.
         </div>
         
-        <div class="upload-section" id="upload-box">
+        <div class="upload-section">
+            <label style="display:block; margin-bottom:10px; font-size:0.8rem;">Velg eksisterende kart eller last opp nytt:</label>
+            <select id="map-select" onchange="loadExistingMap(this.value)" style="width:100%; padding:10px; background:#1f2937; color:white; border:1px solid #374151; border-radius:4px; margin-bottom:10px;">
+                <option value="">-- Velg kart --</option>
+                <option value="assets/falda/falda.jpg">Falda (1676)</option>
+                <option value="assets/Kiepert/11690011.jpg">Kiepert (1892)</option>
+                <option value="assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg">Platner (1911)</option>
+            </select>
+            <div style="margin: 10px 0; font-size: 0.7rem; color: #94a3b8;">- ELLER -</div>
             <input type="file" id="file-upload" accept="image/*" onchange="handleUpload(this)" style="display:none">
-            <button onclick="document.getElementById('file-upload').click()">Velg Bilde</button>
+            <button onclick="document.getElementById('file-upload').click()">Last opp nytt bilde</button>
             <div id="upload-status" style="margin-top:10px; font-size:0.8rem;"></div>
         </div>
 
@@ -116,6 +124,26 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             el.style.display = 'block';
             el.style.background = isError ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)';
             el.style.color = isError ? '#f87171' : '#34d399';
+        }
+        function loadExistingMap(path) {
+            if (!path) return;
+            imgPath = path;
+            if (img) map.removeLayer(img);
+            
+            const center = map.getCenter();
+            img = L.distortableImageOverlay(imgPath, {
+                corners: [
+                    L.latLng(center.lat + 0.005, center.lng - 0.005),
+                    L.latLng(center.lat + 0.005, center.lng + 0.005),
+                    L.latLng(center.lat - 0.005, center.lng - 0.005),
+                    L.latLng(center.lat - 0.005, center.lng + 0.005)
+                ],
+                opacity: 0.5, editable: true
+            }).addTo(map);
+            
+            img.on('edit drag rotate scale', updateOutput);
+            updateOutput();
+            showStatus("Kart lastet inn. Du kan nå flytte på det.");
         }
 
         async function handleUpload(input) {
