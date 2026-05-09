@@ -168,7 +168,7 @@ function initMap() {
 
     // Show loader on zoom if using tiled layers
     map.on('zoomstart', () => {
-        if (activeLayerIndex === 2 || activeLayerIndex === 4) {
+        if (activeLayerIndex > 1) {
             showLoader();
         }
     });
@@ -492,43 +492,55 @@ function loadLanciani() {
 }
 
 function setMapLayer(index) {
+    console.log("--- setMapLayer called with index:", index, "---");
+    
     // Update menu UI
     document.querySelectorAll('.menu-item').forEach(i => {
-        i.classList.toggle('active', parseInt(i.dataset.layer) === index);
+        const itemLayer = parseInt(i.dataset.layer);
+        i.classList.toggle('active', itemLayer === index);
     });
 
-    if (index === 2) loadLanciani();
-    const histLayers = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer, topoLayer];
-    histLayers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
+    // Remove ALL historical/extra layers first
+    const allHist = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer, topoLayer];
+    allHist.forEach(l => { if (l && map.hasLayer(l)) map.removeLayer(l); });
 
     activeLayerIndex = index;
-    
-    // Add current layer
+    let l = null;
+
     if (index === 0) {
         map.addLayer(satelliteLayer);
     } else if (index === 1) {
         map.addLayer(topoLayer);
-    } else {
-        const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer];
-        const l = layers[index];
-        if (l) {
-            console.log("Switching to layer index:", index);
-            showLoader();
-            map.addLayer(l);
-            
-            // If it's a distortable image and already loaded, hide loader quickly
-            if (l.getElement && l.getElement()) {
-                setTimeout(hideLoader, 500);
-            }
-        }
+    } else if (index === 2) {
+        l = lancianiLayer;
+        loadLanciani();
+    } else if (index === 3) {
+        l = faldaLayer;
+    } else if (index === 4) {
+        l = nolliLayer;
+    } else if (index === 5) {
+        l = platnerLayer;
+    } else if (index === 6) {
+        l = kiepertLayer;
+    }
+
+    if (l) {
+        console.log("Adding layer object to map:", l);
+        showLoader();
+        map.addLayer(l);
+        
+        // Ensure attribution is shown
+        updateAttribution(index);
+
+        // Safety: If it's already loaded or doesn't fire 'load', hide after 2s
+        setTimeout(hideLoader, 2000);
     }
 
     // Apply current opacity
     const v = document.getElementById('map-opacity-slider').value / 100;
-    const currentLayer = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer][index];
-    if (currentLayer) {
-        if (currentLayer.setOpacity) currentLayer.setOpacity(v);
-        else if (currentLayer.eachLayer) currentLayer.eachLayer(p => p.setOpacity && p.setOpacity(v));
+    if (l) {
+        if (l.setOpacity) l.setOpacity(v);
+        else if (l.eachLayer) l.eachLayer(p => p.setOpacity && p.setOpacity(v));
     }
 
     // Attribution
