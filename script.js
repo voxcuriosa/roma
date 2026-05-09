@@ -164,10 +164,23 @@ function initMap() {
     };
 
     if (!readURL()) fetchData();
-    else fetchData(); // Still need data
     setupLayersMenu();
     setupEventListeners();
     displayDailyGlimpse();
+
+    // Fix for the "grey area" issue on mobile/resize
+    const resizeObserver = new ResizeObserver(() => {
+        if (map) map.invalidateSize();
+    });
+    resizeObserver.observe(document.getElementById('map-container'));
+
+    document.getElementById('sidebar').addEventListener('transitionend', () => {
+        if (map) map.invalidateSize();
+    });
+
+    map.on('zoomend', () => {
+        setTimeout(() => map.invalidateSize(), 100);
+    });
 
     // Ensure Leaflet calculates size correctly after potential mobile collapse
     setTimeout(() => {
