@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome Interactive Historical Map</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet Distortable Image -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-toolbar@0.4.0-alpha.2/dist/leaflet.toolbar.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-distortableimage@0.21.7/dist/leaflet.distortableimage.css">
+    <script src="https://unpkg.com/leaflet-toolbar@0.4.0-alpha.2/dist/leaflet.toolbar.js"></script>
+    <script src="https://unpkg.com/leaflet-distortableimage@0.21.7/dist/vendor.js"></script>
+    <script src="https://unpkg.com/leaflet-distortableimage@0.21.7/dist/leaflet.distortableimage.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=19.0">
+</head>
+<body>
+    <div id="app-container">
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <h1>Ancient Rome</h1>
+                <p>Interactive Historical Exploration</p>
+                <button id="toggle-sidebar" title="Toggle Menu"><i class="fas fa-chevron-left"></i></button>
+            </div>
+
+            <div class="sidebar-body">
+                <div class="main-controls">
+                    <!-- Daily Highlight Section -->
+                    <div id="daily-glimpse-section" class="sidebar-module">
+                        <div class="module-header">
+                            <i class="fas fa-camera-retro"></i>
+                            <span>Historical Glimpse</span>
+                        </div>
+                        <div id="daily-glimpse-container" class="glimpse-card">
+                            <!-- Content injected via JS -->
+                        </div>
+                    </div>
+
+                    <div class="sidebar-action-group">
+                        <button id="open-album-btn" class="action-btn-primary">
+                            <i class="fas fa-images"></i> Explore Monument Album
+                        </button>
+                    </div>
+
+                    <div id="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search monuments, ruins...">
+                    </div>
+
+                    <div class="sidebar-module" style="margin-top: 15px;">
+                        <div class="filter-controls">
+                            <select id="category-select" class="custom-select">
+                                <option value="">Alle Kategorier</option>
+                            </select>
+                            
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="show-all-toggle" checked>
+                                <span class="checkmark"></span>
+                                Vis alle punkter
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="layer-attribution" class="layer-info-box" style="display: none;"></div>
+                </div>
+
+                <div id="locations-list"></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="disclaimer-box">
+                    <strong>Seeking Data Author</strong>
+                    We are looking for the original creator of this map's data points.
+                    <br><br>
+                    Contact: <span class="secure-mail" onclick="window.location.href='mailto:borchgrevink' + '@' + 'gmail.com'">borchgrevink [at] gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="map-container">
+            <div id="map"></div>
+            
+            <div id="map-tools">
+                <div class="tool-group">
+                    <button id="zoom-in" class="tool-btn" title="Zoom In"><i class="fas fa-plus"></i></button>
+                    <button id="zoom-out" class="tool-btn" title="Zoom Out"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="tool-group">
+                    <button id="layers-btn" class="tool-btn" title="Layers"><i class="fas fa-layer-group"></i></button>
+                    <button id="gps-btn" class="tool-btn" title="My Location"><i class="fas fa-location-crosshairs"></i></button>
+                    <button id="measure-btn" class="tool-btn" title="Measure Distance"><i class="fas fa-ruler-combined"></i></button>
+                </div>
+                <div class="tool-group opacity-tool-group">
+                    <div class="opacity-slider-wrapper">
+                        <i class="fas fa-adjust opacity-icon"></i>
+                        <input type="range" id="map-opacity-slider" min="0" max="100" value="100" style="writing-mode: vertical-lr; direction: rtl; height: 90px; width: 6px;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="custom-attribution"></div>
+            <div id="mobile-sidebar-overlay"></div>
+
+            <div id="map-loader" class="map-status-toast">
+                <i class="fas fa-spinner fa-spin"></i> Loading historical tiles...
+            </div>
+
+            <div id="measure-hint" class="measure-toast">
+                <i class="fas fa-info-circle"></i> Click to add points. Double-click to finish.
+            </div>
+            
+            <div id="layers-menu" class="layers-menu">
+                <div class="menu-item active" data-layer="0"><i class="fas fa-satellite"></i> Satellite</div>
+                <div class="menu-item" data-layer="1"><i class="fas fa-mountain"></i> Topo</div>
+                <div class="menu-item" data-layer="2"><i class="fas fa-map"></i> Lanciani (1901)</div>
+                <div class="menu-item" data-layer="3"><i class="fas fa-compass"></i> Falda (1676)</div>
+                <div class="menu-item" data-layer="4"><i class="fas fa-scroll"></i> Nolli (1748)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALBUM MODAL (Mining Map Style) -->
+    <div id="album-modal" class="modal">
+        <div class="modal-content album-content">
+            <span id="close-album" class="close-btn"><i class="fas fa-times"></i></span>
+            <div class="album-header">
+                <h2>Historical Monument Collection</h2>
+                <div class="album-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="album-search-input" placeholder="Search through 557 historical sites...">
+                </div>
+            </div>
+            <div id="album-grid" class="album-grid">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAIL MODAL -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn"><i class="fas fa-times"></i></span>
+            <div id="modal-image-container" class="modal-img-wrapper" style="display: none;">
+                <img id="modal-image" src="" alt="Historical View">
+            </div>
+            <h2 id="modal-title"></h2>
+            <span id="modal-category" class="badge-primary"></span>
+            <div class="modal-body"><p id="modal-description"></p></div>
+            <div id="modal-metadata" class="modal-metadata-footer">
+                <div class="meta-item"><strong>Credit:</strong> <span id="modal-credit"></span></div>
+                <div class="meta-item"><strong>Rights:</strong> <span id="modal-rights"></span></div>
+                <div id="modal-link-container" class="meta-item"><a id="modal-source-link" href="#" target="_blank">View in Original Archive <i class="fas fa-external-link-alt"></i></a></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=19.0"></script>
+</body>
+</html>

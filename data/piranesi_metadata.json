@@ -1,0 +1,637 @@
+[
+  {
+    "id": 363415,
+    "title": "Vedute di Roma (Views of Rome), part I",
+    "image": "assets/historical/piranesi_363415.jpg"
+  },
+  {
+    "id": 362914,
+    "title": "Frontispiece from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_362914.jpg"
+  },
+  {
+    "id": 412428,
+    "title": "Plate 19: Part of the ancient Appian Way about three miles outside Porta S. Sebastiano, from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte de quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_412428.jpg"
+  },
+  {
+    "id": 365390,
+    "title": "Arch of Galienus. 1. Fa\u00e7ade od the Church of S. Vito (Arco di Galieno. 1. Facciata della Chiesa di S. Vito), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\"",
+    "image": "assets/historical/piranesi_365390.jpg"
+  },
+  {
+    "id": 363418,
+    "title": "The Piazza di Spagna (Veduta di Piazza di Spagna)",
+    "image": "assets/historical/piranesi_363418.jpg"
+  },
+  {
+    "id": 365402,
+    "title": "Plate 17: The Arch of Rimini built by Augustus (Arco di Rimino fabbricato da Augusto), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\"",
+    "image": "assets/historical/piranesi_365402.jpg"
+  },
+  {
+    "id": 365400,
+    "title": "Plate 18: The Tomb of the Scipios (Sepolcro della famiglia de' Scipioni), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\"",
+    "image": "assets/historical/piranesi_365400.jpg"
+  },
+  {
+    "id": 365399,
+    "title": "Plate 20: Tomb of Caecilia Metella called the Capo di Bove (Ox Head) (Sepolcro di Metela detto Capo di Bove), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365399.jpg"
+  },
+  {
+    "id": 365398,
+    "title": "Plate 21: Temple of Pola in Istria (Tempio di Pola in Istria), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365398.jpg"
+  },
+  {
+    "id": 365393,
+    "title": "Plate 26: Temple of Clitumnus between Foligno and Spoleto... (Tempio di Clitumno tra Fuligno e Spoletti...), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365393.jpg"
+  },
+  {
+    "id": 365395,
+    "title": "Plate 24: Arch of Pola in Istria near the Gate (Arco di Pola in Istria vicino alla Porta), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365395.jpg"
+  },
+  {
+    "id": 365391,
+    "title": "Plate 28: Arch of Trajan in Ancona (Arco di Trajano in Ancona), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365391.jpg"
+  },
+  {
+    "id": 365396,
+    "title": "Plate 23: Amphitheater of Pola in Istria near the sea (Anfiteatro di Pola in Istria vicino al mare), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365396.jpg"
+  },
+  {
+    "id": 365397,
+    "title": "Plate 22: Rear View of the Temple of Pola in Istria. 1. Rear View of another temple. (Rovescio del Tempio di Pola di Istria. 1. Rovescio di un Altro Tempio.), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365397.jpg"
+  },
+  {
+    "id": 365394,
+    "title": "Plate 25: Amphitheater of Verona (Anfiteatro di Verona), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365394.jpg"
+  },
+  {
+    "id": 365392,
+    "title": "Plate 27: Tomb of the three Curiatii brothers in Albano (Sepolcro delle tre fratelli Curiati in Albano), from \"Alcune Vedute di Archi Trionfali ed altri monumenti inalzati da Romani parte di quali se veggono in Roma e parte per l'Italia\" (Some Views of Triumphal Arches and other monuments erected by the Romans, some of which are in Rome and some elsewhere in Italy)",
+    "image": "assets/historical/piranesi_365392.jpg"
+  },
+  {
+    "id": 363908,
+    "title": "The Theatre of Marcellus (Teatro di Marcello), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363908.jpg"
+  },
+  {
+    "id": 363254,
+    "title": "View of the Palazzo Odeschali, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363254.jpg"
+  },
+  {
+    "id": 363327,
+    "title": "The tomb of Caecilia Metella, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363327.jpg"
+  },
+  {
+    "id": 363077,
+    "title": "View of the Piazza di monte Cavallo, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363077.jpg"
+  },
+  {
+    "id": 363253,
+    "title": "The Pyramid of Gaius Cestius, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363253.jpg"
+  },
+  {
+    "id": 363072,
+    "title": "View of the Fountainhead of the Acqua Felice...., from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363072.jpg"
+  },
+  {
+    "id": 363078,
+    "title": "View of the Port of Ripa Grande, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363078.jpg"
+  },
+  {
+    "id": 360443,
+    "title": "View along the Via del Corso of the Palazzo dell'Accademia, established by Louis XIV, King of France for French students of Painting, Sculpture and Architecture..., from \"Vedute di Roma\" (Views of Rome), part I",
+    "image": "assets/historical/piranesi_360443.jpg"
+  },
+  {
+    "id": 363079,
+    "title": "View of St. Peter's Basilica and Piazza in the Vatican, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363079.jpg"
+  },
+  {
+    "id": 363087,
+    "title": "View of the exterior of St. Peter's Basilica in the Vatican, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363087.jpg"
+  },
+  {
+    "id": 363080,
+    "title": "View of the Fa\u00e7ade of the Basilica of S. Croce in Gerusalemme [the Holy Cross in Jerusalem], from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363080.jpg"
+  },
+  {
+    "id": 363089,
+    "title": "View of the palace of the illustrious Barberini family on the Quirinal Hill, designed by Cavaliere Bernini, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363089.jpg"
+  },
+  {
+    "id": 360270,
+    "title": "Veduta dell'Anfiteatro Flavio detto il Colosseo. From 'Vedute di Roma' (Views of Rome)",
+    "image": "assets/historical/piranesi_360270.jpg"
+  },
+  {
+    "id": 363070,
+    "title": "View of the Basilica of San Sebastiano fuori delle mura [St. Sebastian outside the Walls] on the Appian Way, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363070.jpg"
+  },
+  {
+    "id": 363049,
+    "title": "View of the Temple of the Temple of the Sibyl at Tivoli, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363049.jpg"
+  },
+  {
+    "id": 363047,
+    "title": "View of the Basilica of San Sebastiano fuori delle mura [St. Sebastian ouside the Walls] on the Appian Way, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363047.jpg"
+  },
+  {
+    "id": 363328,
+    "title": "Remains of a covered portico, or a cryptoporticus, in a villa of Domitian, five miles outside Rome on the Frascati road, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363328.jpg"
+  },
+  {
+    "id": 363050,
+    "title": "Interior view of the ancient Temple of Bacchus, now the church of S. Urbano, two miles from Rome..., from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363050.jpg"
+  },
+  {
+    "id": 363073,
+    "title": "Remains of a covered portico, or a cryptoportiucus, in a villa of Domitian, five miles outside Rome on the Frascati road, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363073.jpg"
+  },
+  {
+    "id": 362729,
+    "title": "The Piazza del Popolo (Veduta della Piazza del Popolo), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_362729.jpg"
+  },
+  {
+    "id": 363905,
+    "title": "The Temple of Venus and Roma (erroneously called Temple of Sol and Luna) (Veduta degli avanzi di due triclini che appartenevano alla Casa aurea di Nerone), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363905.jpg"
+  },
+  {
+    "id": 360267,
+    "title": "View of the Mausoleum of the Emperor Hadrian (now called Castel S. Angelo) from the rear, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_360267.jpg"
+  },
+  {
+    "id": 362912,
+    "title": "Frontispiece, with Statue of Minerva, from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_362912.jpg"
+  },
+  {
+    "id": 362913,
+    "title": "Frontispiece, with Statue of Minerva, from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_362913.jpg"
+  },
+  {
+    "id": 360268,
+    "title": "Veduta interna dell'Atrio del Portico di Ottavia (Internal View of the Atrium of the Portico of Octavia), in: 'Vedute di Roma' (Views of Rome)",
+    "image": "assets/historical/piranesi_360268.jpg"
+  },
+  {
+    "id": 353967,
+    "title": "St. Giovanni in Laterano, Interior, from \"Vedute di Roma\" (Views of Rome)",
+    "image": "assets/historical/piranesi_353967.jpg"
+  },
+  {
+    "id": 363417,
+    "title": "The Arch of Septimius Severus, with the Church of S. Martina on the right (Arco di Settimio Severo), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363417.jpg"
+  },
+  {
+    "id": 364374,
+    "title": "The Pyramid of Caius Cestius, with the Porta S. Paolo and adjoining road (Veduta del Sepolcro di Cajo Cestio), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_364374.jpg"
+  },
+  {
+    "id": 363084,
+    "title": "View of the Fountainhead of the Acqua Paola on Monte Aureo, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363084.jpg"
+  },
+  {
+    "id": 362911,
+    "title": "Frontispiece, with Statue of Minerva, from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_362911.jpg"
+  },
+  {
+    "id": 363887,
+    "title": "S. Giovanni in Laterano, main fa\u00e7ade, with Palace and Scala Santa on the right (Veduta della Basilica di S. Giovanni Laterano), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363887.jpg"
+  },
+  {
+    "id": 400195,
+    "title": "View of the fountainhead and the Grotto of Egiria outside the Porta Capena, from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_400195.jpg"
+  },
+  {
+    "id": 364595,
+    "title": "The Basilica of Constantine (Veduta degli avanzi della Casa aurea di Nerone, detti volgarmente il Tempio della Pace), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_364595.jpg"
+  },
+  {
+    "id": 353966,
+    "title": "Interior view of St. Peter's Basilica in the Vatican, from \"Vedute di Roma\" (Roman Views)",
+    "image": "assets/historical/piranesi_353966.jpg"
+  },
+  {
+    "id": 363427,
+    "title": "The Piazza della Rotonda, with the Pantheon and Obelisk (Veduta della Piazza della Rotonda), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363427.jpg"
+  },
+  {
+    "id": 363906,
+    "title": "S. Constanza (erroneously callled Temple of Bacchus) (Veduta interna del Sepolcro di S. Constanza, fabbricato da Costantino Magno, ed erroneamente detto il Tempio di Bacco, inoggi Chiesa della medisme Santa), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363906.jpg"
+  },
+  {
+    "id": 363083,
+    "title": "The Arch of Titus (Veduta dell'Arco di Tito)",
+    "image": "assets/historical/piranesi_363083.jpg"
+  },
+  {
+    "id": 367587,
+    "title": "The Piazza Navona, Rome, above the ruins of the Circus of Domitian, the Church of Sant Agnese to the right, Bernini's fountain in the center, from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_367587.jpg"
+  },
+  {
+    "id": 363902,
+    "title": "The smaller harbor, called the Porto di Ripetta (Veduta del Porto di Ripetta)",
+    "image": "assets/historical/piranesi_363902.jpg"
+  },
+  {
+    "id": 363321,
+    "title": "View of the Palazzo della Consulta on the Quirinal housing the Papal Secreteriat, from Vedute di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363321.jpg"
+  },
+  {
+    "id": 409630,
+    "title": "View of the Flavian Amphitheater, called the Colosseum, from \"Vedute di Roma\" (Roman Views), part II",
+    "image": "assets/historical/piranesi_409630.jpg"
+  },
+  {
+    "id": 366647,
+    "title": "View of the Campo Vaccino (Roman Forum with the Temple of Castor and Pollux to right), from \"Vedute di Roma\" (Roman Views), part II",
+    "image": "assets/historical/piranesi_366647.jpg"
+  },
+  {
+    "id": 363900,
+    "title": "The Temple of Vespian (Veduta del Tempio di giove Tonante)",
+    "image": "assets/historical/piranesi_363900.jpg"
+  },
+  {
+    "id": 363892,
+    "title": "Two churches near Trajan's column, S. Maria di Loreto and Santissimo Nome di Maria (Veduta delle due chiesa, l'una detta della Madonna di Loreto, l'altra del nome di Maria, presso la Colonna Trajana)",
+    "image": "assets/historical/piranesi_363892.jpg"
+  },
+  {
+    "id": 363325,
+    "title": "The so-called Temple of Bacchus, now the Church of S. Urban, interior (Veduta interna dell antico Tempio di Bacco, or. di S. Urbano)",
+    "image": "assets/historical/piranesi_363325.jpg"
+  },
+  {
+    "id": 406668,
+    "title": "Another view of the remains of the Pronaos of the Temple of Concord (The Temple of Saturn with Arch of Septimius Severus in left background), from \"Vedute di Roma\" (Views of Rome), part I",
+    "image": "assets/historical/piranesi_406668.jpg"
+  },
+  {
+    "id": 363893,
+    "title": "View of the Temple of Cybele in the Piazza of the Bocca della Verit\u00e0 (Veduta del Tempio di Cibele a Piazza della Bocca della Verit\u00e0)",
+    "image": "assets/historical/piranesi_363893.jpg"
+  },
+  {
+    "id": 363420,
+    "title": "The Forum Romanum, or Campo Vaccino, from the Capitol, with the Arch of Septimius in the foreground left, Temple of Vespian right, and the Colosseum in the distance (Veduta di Campo Vaccino)",
+    "image": "assets/historical/piranesi_363420.jpg"
+  },
+  {
+    "id": 348799,
+    "title": "The Pantheon exterior (Veduta del Pantheon d'Agrippa oggi Chiesa di S. Maria ad Martyres)",
+    "image": "assets/historical/piranesi_348799.jpg"
+  },
+  {
+    "id": 362909,
+    "title": "Veduta degli avanzi del Foro di Nerva, l'arcade et la muraille (The Forum of Augustus [erroneously called the Forum of Nerva])",
+    "image": "assets/historical/piranesi_362909.jpg"
+  },
+  {
+    "id": 362915,
+    "title": "Avanzi del Tempio detto di Apollo nella Villa Adriana vicino a Tivoli (Hadrian's Villa. Remains of the Smaller Palace [Formerly called the Temple of Apollo])",
+    "image": "assets/historical/piranesi_362915.jpg"
+  },
+  {
+    "id": 363252,
+    "title": "The so-called Villa of Maecenas at Tivoli. Interior with two figures in the opening of an arch above. (Veduta interna della Villa di Mecenate)",
+    "image": "assets/historical/piranesi_363252.jpg"
+  },
+  {
+    "id": 364593,
+    "title": "The Fontana dell'Aqua Giulia (Vedute dell avanzo del Castello del'Aqua Giulia)",
+    "image": "assets/historical/piranesi_364593.jpg"
+  },
+  {
+    "id": 364372,
+    "title": "Hadrian's Villa: The Piazza d'Oro (Piazza of Gold) (Veduta degli Avanzi della Circonferenza delle antiche Fabbriche di una delle Piazze della Villa Adriana oggidi chiamata Piazza d'oro)",
+    "image": "assets/historical/piranesi_364372.jpg"
+  },
+  {
+    "id": 364376,
+    "title": "Hadrian's Villa: The Piazza d'Oro (Piazza of Gold) (Veduta degli Avanzi della Circonferenza delle antiche Fabbriche di una delle Piazze della Villa Adriana oggidi chiamata Piazza d'oro)",
+    "image": "assets/historical/piranesi_364376.jpg"
+  },
+  {
+    "id": 363894,
+    "title": "Hadrian's Villa: The Canopus (Avanzi del Tempio Dio Canopo nella Villa Adriana in Tivoli)",
+    "image": "assets/historical/piranesi_363894.jpg"
+  },
+  {
+    "id": 363421,
+    "title": "The Capitol and the steps of S. Maria in Aracoeli (Veduta del Romano Camipidoglio con scalinata che va alla chiesa d'Araceli)",
+    "image": "assets/historical/piranesi_363421.jpg"
+  },
+  {
+    "id": 366154,
+    "title": "Veduta degli avanzi del Castro Pretorio nella Villa Adriana a Tivoli (View of the Remains of the Praetorian Fort [the Poecile], Hadrian's Villa, Tivoli)",
+    "image": "assets/historical/piranesi_366154.jpg"
+  },
+  {
+    "id": 363074,
+    "title": "View of the rear entrance of the Basilica of S. Maria Maggiore, from Veduta di Roma (Roman Views)",
+    "image": "assets/historical/piranesi_363074.jpg"
+  },
+  {
+    "id": 363086,
+    "title": "The so-called Grotto of Egeria (Veduta della fonte e delle spelonche d'Egeria fuor della Porta Capena)",
+    "image": "assets/historical/piranesi_363086.jpg"
+  },
+  {
+    "id": 363045,
+    "title": "Altra V. del Tempio della Sibilla in Tivoli (Another view of the Temple of the Sibyl in Tivoli)",
+    "image": "assets/historical/piranesi_363045.jpg"
+  },
+  {
+    "id": 363329,
+    "title": "The so-called Temple of Salus, on the road to Albano (Tempio antico volgarmente detto della Salute)",
+    "image": "assets/historical/piranesi_363329.jpg"
+  },
+  {
+    "id": 364360,
+    "title": "The so-called Temple of Fortuna Virilis (now Church of  S. Maria Egizziaca) (Veduta del Tempio della Fortuna Virile)",
+    "image": "assets/historical/piranesi_364360.jpg"
+  },
+  {
+    "id": 365057,
+    "title": "The Bridge and Castel S. Angelo (Veduta del Ponte e Castello Sant'Angelo",
+    "image": "assets/historical/piranesi_365057.jpg"
+  },
+  {
+    "id": 363046,
+    "title": "Interior view of St. Peter's Basilica in the Vatican, from \"Vedute di Roma\" (Roman Views)",
+    "image": "assets/historical/piranesi_363046.jpg"
+  },
+  {
+    "id": 363318,
+    "title": "View of St. Peter's Basilica and Piazza in the Vatican, from \"Vedute di Roma\" (Roman Views)",
+    "image": "assets/historical/piranesi_363318.jpg"
+  },
+  {
+    "id": 365356,
+    "title": "Frontispiece to \"Roman Antiquities outside Rome drawn and etched by Giambat'ta Piranesi, Venetian Architect Part Two\" (ANTCHIT\u00c0 ROMANE FUORI DI ROMA DISEGNATE ED INCISE DA GIAMBAT'TA PIRANESI, ARCHITETTO VENEZIANO, PARTE SECONDA)",
+    "image": "assets/historical/piranesi_365356.jpg"
+  },
+  {
+    "id": 363433,
+    "title": "The Forum Romanum, or Campo Vaccino, from the capitol, with the Arch of Septimus Severus in the foreground left, Temple of Vespian right, and the Colosseum in the distance (Veduta di Campo Vaccino), from \"Vedute di Roma\"",
+    "image": "assets/historical/piranesi_363433.jpg"
+  },
+  {
+    "id": 365376,
+    "title": "Plate 16: The Bridge at Rimini built by the Emperors Augustus and Tiberius (Ponte di Rimino fabbricato da Augusto e da Tiberio Imperatori), from \"Antichit\u00e0 Romane fuori di Roma\"",
+    "image": "assets/historical/piranesi_365376.jpg"
+  },
+  {
+    "id": 369399,
+    "title": "Vue prise dans les jardins de la Ville d'Est a Tivoli",
+    "image": "assets/historical/piranesi_369399.jpg"
+  },
+  {
+    "id": 364373,
+    "title": "The Temple of Vespasian and Titus (Veduta del Tempio di Giove Tonante)",
+    "image": "assets/historical/piranesi_364373.jpg"
+  },
+  {
+    "id": 339683,
+    "title": "The Octagonal Room in the Small Baths at the Villa of Hadrian (Tivoli)",
+    "image": "assets/historical/piranesi_339683.jpg"
+  },
+  {
+    "id": 416034,
+    "title": "Plate 10: The ancient Capitol ascended by approximately one hundred steps [...] (Campidoglio antico a cui si ascendeva per circa cento gradini [...]), from \"Part one of architecture and perspectives: drawn and etched by Gio. Batt'a Piranesi, Venetian Architect: dedicated to Nicola Giobbe\" (Prima parte di Architetture, e prospettive inventate, ed incise da Gio. Batt'a Piranesi Architetto Veneziano dedicate al Sig. Nicola Giobbe)",
+    "image": "assets/historical/piranesi_416034.jpg"
+  },
+  {
+    "id": 416026,
+    "title": "Plate 6: Ruins of an ancient tomb in front of ruins of an ancient aqueduct (...), from \"Part one of architecture and perspectives: drawn and etched by Gio. Batt'a Piranesi, Venetian Architect: dedicated to Nicola Giobbe\" (Prima parte di Architetture, e prospettive inventate, ed incise da Gio. Batt'a Piranesi Architetto Veneziano dedicate al Sig. Nicola Giobbe)",
+    "image": "assets/historical/piranesi_416026.jpg"
+  },
+  {
+    "id": 416031,
+    "title": "Plate 7: Ancient altar on which sacrifices were performed in antiquity, surrounded by other ruins (Ara antica sopra la quale si facevano anticamente i sagrifizi, con altre ruine all' intorno), from \"Part one of architecture and perspectives: drawn and etched by Gio. Batt'a Piranesi, Venetian Architect: dedicated to Nicola Giobbe\" (Prima parte di Architetture, e prospettive inventate, ed incise da Gio. Batt'a Piranesi Architetto Veneziano dedicate al Sig. Nicola Giobbe)",
+    "image": "assets/historical/piranesi_416031.jpg"
+  },
+  {
+    "id": 416024,
+    "title": "Plate 9: Colonnaded hall according to the custom of the ancient Romans (...), from \"Part one of architecture and perspectives: drawn and etched by Gio. Batt'a Piranesi, Venetian Architect: dedicated to Nicola Giobbe\" (Prima parte di Architetture, e prospettive inventate, ed incise da Gio. Batt'a Piranesi Architetto Veneziano dedicate al Sig. Nicola Giobbe)",
+    "image": "assets/historical/piranesi_416024.jpg"
+  },
+  {
+    "id": 365480,
+    "title": "Stairways adorned by magnificient architecture... (Gruppo di Scale ornato di magnifica Architettura...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365480.jpg"
+  },
+  {
+    "id": 365471,
+    "title": "Ruins of an ancient tomb in front of ruins of an ancient aqueduct (Ruine di Sepolcro antico posto dinanzi ad altre ruine d'un Aquedotto), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365471.jpg"
+  },
+  {
+    "id": 365875,
+    "title": "Vestibule of an ancient temple... (Vestibolo d'antico Tempio...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365875.jpg"
+  },
+  {
+    "id": 365474,
+    "title": "Dark prison with a courtyard for the punishment of criminals... (Carcere oscura con Antenna pel suplizio d\u00e8 malfatori...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365474.jpg"
+  },
+  {
+    "id": 365465,
+    "title": "Group of columns which support two arches of a great courtyard... (Gruppo di Colonne, che regge due archi d'un grande Cortile...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365465.jpg"
+  },
+  {
+    "id": 365488,
+    "title": "Large sculpture gallery built on arches and lit from above... (Galleria grande di Statue, la cui struttura \u00e8 con Archi e col lume preso dall'alto...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365488.jpg"
+  },
+  {
+    "id": 365486,
+    "title": "Colonnaded hall according to the custom of the ancient Romans, and niches adorned with statues (Sala all'uso degli antichi Romani con Colonne, e nicchie ornate di Statue), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365486.jpg"
+  },
+  {
+    "id": 365404,
+    "title": "Ancient mausoleum erected for the ashes of a Roman Emperor (Mausoleo antico eretto per le ceneri d'un Imperadore Romano), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365404.jpg"
+  },
+  {
+    "id": 365485,
+    "title": "Magnificent bridge with loggias, and arches erected by a Roman Emperor... (Ponte magnfiico con Logge, ed Archi erretto da un Imperatore Romane...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365485.jpg"
+  },
+  {
+    "id": 365477,
+    "title": "View of a courtyard with a loggia, fountains, statues, and other ornaments (Prospetto d'un regio Cortile nel cui mezzo vi st\u00e0 una Loggia...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365477.jpg"
+  },
+  {
+    "id": 365468,
+    "title": "Ancient Altar on which sacrifices were performed in antiquity, surrounded by other ruins (Ara antica sopra la quale si facevano anticamente i sagrifizi, con altre ruine all'intorno), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365468.jpg"
+  },
+  {
+    "id": 365466,
+    "title": "Imaginery ancient temple designed in the style of those built in honor of the Goddess Vesta... (Tempio antico inventato e disegnato alla maniera di quelli che si fabbricavano in onore della Dea Vesta...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365466.jpg"
+  },
+  {
+    "id": 365482,
+    "title": "The ancient Capitol ascended by approximately one hundred steps... (Campidoglio antico a cui si ascendeva per circa cento gradini...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365482.jpg"
+  },
+  {
+    "id": 365403,
+    "title": "Ancient Roman forum surrounded by porticoes, with loggias, some of which communicate with the Imperial Palace and others with the prisons... (Foro antico romano circondata da portici, con logge, alcune delle quali si uniscono al Palazzo Imperiale...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365403.jpg"
+  },
+  {
+    "id": 365472,
+    "title": "Remains of ancient buldings among which stands the sepulchral urn of Marcus Agrippa made entirely of porphyry, which serves today as the Tomb of Clement XII... (Vestiggi d'antichi Edifici fra i quali evvi l'Urna Sepolcrale tutta d'un pezzo di...), from \"Prima Parte di Architettura, e Prospettive\"",
+    "image": "assets/historical/piranesi_365472.jpg"
+  },
+  {
+    "id": 365364,
+    "title": "Plate 8: Arch of Drusus at the Porta S. Sebastiano in Rome (Arco di Druso alla Porta di Sebastiano in Roma), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365364.jpg"
+  },
+  {
+    "id": 365363,
+    "title": "Plate 9: Arch of Constantine in Rome (Arco di Costantino in Roma), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365363.jpg"
+  },
+  {
+    "id": 365357,
+    "title": "Plate 15: Forum of Augustus (Foro di Augusto), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365357.jpg"
+  },
+  {
+    "id": 365375,
+    "title": "Plate 6: 1. Arch of Titus. 2. Villa Farnese. 3. Columns of the Temple of Jupiter Stator (the Supporter). 4. Arch of Septimus Severus. 5. Temple of Peace. (1. Arco di Tito in Roma. 2. Villa Farnese. 2. Colon.e. del Tem.o di G.ve St.re. 4. Ar.co di Set.o...), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365375.jpg"
+  },
+  {
+    "id": 365360,
+    "title": "Plate 12: Flavian Amphitheater, called the Colosseum. 1. Arch of Constantine. 2. Palatine Hill. (Anfiteatro Flavio detto il Colosseo in Roma. 1. Arco di Costantino. 2. Monte Palatino.), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365360.jpg"
+  },
+  {
+    "id": 365382,
+    "title": "Seven columns of the Temple of Juturna with Corinthian capitals . . . (Sette colonne con capitelli corinti spettanti al Tempio di Giuturna . . .)",
+    "image": "assets/historical/piranesi_365382.jpg"
+  },
+  {
+    "id": 360363,
+    "title": "Plan of the Mausoleum of Caecilia Metella, wife of the Triumvir Marcus Crassus..., tome 3, tavola 49 from \"Le Antichit\u00e0 Romane\" (Roman Antiquities)",
+    "image": "assets/historical/piranesi_360363.jpg"
+  },
+  {
+    "id": 365359,
+    "title": "Plate 13: Arch of Settimius Severus 1. Temple of Concord. 2. Ascent to the Capitoline Hill (Arco di Settimio Severo. 1. Tempio della Concordia. 2. Salita di Campidoglio.), from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365359.jpg"
+  },
+  {
+    "id": 363048,
+    "title": "Plan of Rome..., from \"Le Antichit\u00e0 Romane\" (Roman Antiquities)",
+    "image": "assets/historical/piranesi_363048.jpg"
+  },
+  {
+    "id": 365374,
+    "title": "Plate 3: Inscriptions on Antiquities outside Rome with Index of Plates, from \"Antichit\u00e0 Romane de' Tempi della Repubblica, e de' primi Imperatori\"",
+    "image": "assets/historical/piranesi_365374.jpg"
+  },
+  {
+    "id": 416032,
+    "title": "Plate 3: Ancient mausoleum erected for the ashes of a Roman emperor (Mausoleo antico eretto per le ceneri d'un imperadore romano), from \"Part one of architecture and perspectives: drawn and etched by Gio. Batt'a Piranesi, Venetian Architect: dedicated to Nicola Giobbe\" (Prima parte di Architetture, e prospettive inventate, ed incise da Gio. Batt'a Piranesi Architetto Veneziano dedicate al Sig. Nicola Giobbe)",
+    "image": "assets/historical/piranesi_416032.jpg"
+  },
+  {
+    "id": 416055,
+    "title": "Plan and facade of the Temple of Fortuna Virilis (Tempio della Fortuna Virile), from \"Le Antichit\u00e0 Romane\"",
+    "image": "assets/historical/piranesi_416055.jpg"
+  },
+  {
+    "id": 360365,
+    "title": "Means by which the large blocks of travertine and marble were lifted during the construction of the large Tomb of Caecilia Metella, tome 3, tavola 53 from \"Le Antichit\u00e0 Romane\" (Roman Antiquities)",
+    "image": "assets/historical/piranesi_360365.jpg"
+  },
+  {
+    "id": 362672,
+    "title": "The Monumental Tablet, from \"Grotteschi\" (Grotesques)",
+    "image": "assets/historical/piranesi_362672.jpg"
+  },
+  {
+    "id": 362674,
+    "title": "The Tomb of Nero, from \"Grotteschi\" (Grotesques)",
+    "image": "assets/historical/piranesi_362674.jpg"
+  },
+  {
+    "id": 362797,
+    "title": "Title Page, from \"Carceri d'invenzione\" (Imaginary Prisons)",
+    "image": "assets/historical/piranesi_362797.jpg"
+  },
+  {
+    "id": 198909,
+    "title": "Table",
+    "image": "assets/historical/piranesi_198909.jpg"
+  },
+  {
+    "id": 340429,
+    "title": "The Lottery in Piazza di Montecitorio",
+    "image": "assets/historical/piranesi_340429.jpg"
+  },
+  {
+    "id": 435713,
+    "title": "The Disillusioned Medea",
+    "image": "assets/historical/piranesi_435713.jpg"
+  },
+  {
+    "id": 436569,
+    "title": "The Choir of the Capuchin Church in Rome",
+    "image": "assets/historical/piranesi_436569.jpg"
+  }
+]
