@@ -151,15 +151,19 @@ async function initMap() {
     });
 
     const mapSlider = document.getElementById('map-opacity-slider');
-    mapSlider.oninput = (e) => {
-        const v = e.target.value / 100;
-        [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer].forEach(l => {
-            if (map.hasLayer(l)) {
-                if (l.setOpacity) l.setOpacity(v);
-                else if (l.eachLayer) l.eachLayer(part => part.setOpacity && part.setOpacity(v));
-            }
-        });
-    };
+    if (mapSlider) {
+        L.DomEvent.disableClickPropagation(mapSlider);
+        L.DomEvent.disableScrollPropagation(mapSlider);
+        mapSlider.oninput = (e) => {
+            const v = e.target.value / 100;
+            [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer].forEach(l => {
+                if (l && map.hasLayer(l)) {
+                    if (l.setOpacity) l.setOpacity(v);
+                    else if (l.eachLayer) l.eachLayer(part => part.setOpacity && part.setOpacity(v));
+                }
+            });
+        };
+    }
 
     if (!readURL()) fetchData();
     setupLayersMenu();
