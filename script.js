@@ -165,7 +165,8 @@ async function initMap() {
         };
     }
 
-    if (!readURL()) fetchData();
+    readURL();
+    fetchData();
     setupLayersMenu();
     setupEventListeners();
     displayDailyGlimpse();
