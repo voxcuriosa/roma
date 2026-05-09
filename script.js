@@ -492,6 +492,11 @@ function loadLanciani() {
 }
 
 function setMapLayer(index) {
+    // Update menu UI
+    document.querySelectorAll('.menu-item').forEach(i => {
+        i.classList.toggle('active', parseInt(i.dataset.layer) === index);
+    });
+
     if (index === 2) loadLanciani();
     const histLayers = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer, topoLayer];
     histLayers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
