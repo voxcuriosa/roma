@@ -70,6 +70,7 @@ let satelliteLayer, topoLayer, lancianiLayer, faldaLayer, nolliLayer, platnerLay
 let userMarker, lastUserLatLng, isFollowingUser = false;
 let selectedCategory = "";
 let showAllPoints = true;
+let customCorners = {};
 
 // Custom Measurement State
 let isMeasuring = false;
@@ -103,12 +104,23 @@ function readURL() {
     return true;
 }
 
-function initMap() {
+async function initMap() {
     // MOBILE DEFAULT: Collapse sidebar BEFORE map init if screen is narrow
     if (window.innerWidth < 768) {
         const sidebar = document.getElementById('sidebar');
         if (sidebar) sidebar.classList.add('collapsed');
     }
+
+    // Load custom corners from georef tool
+    try {
+        const res = await fetch('published_maps.json?v=' + Date.now());
+        if (res.ok) {
+            const data = await res.json();
+            data.forEach(m => {
+                customCorners[m.imagePath] = m.corners;
+            });
+        }
+    } catch (e) { console.log("No custom corners found."); }
 
     satelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', { attribution: 'Google Satellite' });
     topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { attribution: 'OpenTopoMap' });
@@ -120,9 +132,7 @@ function initMap() {
     nolliLayer.on('loading', () => showLoader());
     nolliLayer.on('load', () => hideLoader());
 
-    // Standard layers are init, distortable layers are lazy-init in setMapLayer
-
-    map = L.map('map', {
+    map = L.map('map-container', {
         center: [41.8902, 12.4922], zoom: 16,
         layers: [satelliteLayer], zoomControl: false,
         maxZoom: 22
@@ -502,8 +512,15 @@ function setMapLayer(index) {
         loadLanciani();
     } else if (index === 3) {
         if (faldaLayer) map.removeLayer(faldaLayer);
-        faldaLayer = L.distortableImageOverlay('assets/falda/falda.jpg', {
-            corners: [L.latLng(41.9211, 12.5042), L.latLng(41.8757, 12.5223), L.latLng(41.9111, 12.4345), L.latLng(41.8607, 12.4571)],
+        const url = 'assets/falda/falda.jpg';
+        const corners = customCorners[url] || [
+            L.latLng(41.92111959572856, 12.50420093536377),
+            L.latLng(41.87572834776342, 12.522311210632326),
+            L.latLng(41.91115609024473, 12.43459224700928),
+            L.latLng(41.86077188073308, 12.457165718078615)
+        ];
+        faldaLayer = L.distortableImageOverlay(url, {
+            corners: corners,
             opacity: 1, editable: false, mode: 'lock'
         }).on('load', () => hideLoader());
         l = faldaLayer;
@@ -511,25 +528,29 @@ function setMapLayer(index) {
         l = nolliLayer;
     } else if (index === 5) {
         if (platnerLayer) map.removeLayer(platnerLayer);
-        platnerLayer = L.distortableImageOverlay('assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
-            corners: [
-                L.latLng(41.91543547867898, 12.444505691528322),
-                L.latLng(41.91505226156054, 12.52372741699219),
-                L.latLng(41.87103086005411, 12.443218231201172),
-                L.latLng(41.87147825471, 12.526044845581056)
-            ],
+        const url = 'assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg';
+        const corners = customCorners[url] || [
+            L.latLng(41.91543547867898, 12.444505691528322),
+            L.latLng(41.91505226156054, 12.52372741699219),
+            L.latLng(41.87103086005411, 12.443218231201172),
+            L.latLng(41.87147825471, 12.526044845581056)
+        ];
+        platnerLayer = L.distortableImageOverlay(url, {
+            corners: corners,
             opacity: 1, editable: false, mode: 'lock'
         }).on('load', () => hideLoader());
         l = platnerLayer;
     } else if (index === 6) {
         if (kiepertLayer) map.removeLayer(kiepertLayer);
-        kiepertLayer = L.distortableImageOverlay('assets/Kiepert/11690011.jpg', {
-            corners: [
-                L.latLng(41.92629234083705, 12.437210083007814),
-                L.latLng(41.923993394784745, 12.52896308898926),
-                L.latLng(41.82928155978289, 12.437896728515625),
-                L.latLng(41.82992111131576, 12.528877258300783)
-            ],
+        const url = 'assets/Kiepert/11690011.jpg';
+        const corners = customCorners[url] || [
+            L.latLng(41.92629234083705, 12.437210083007814),
+            L.latLng(41.923993394784745, 12.52896308898926),
+            L.latLng(41.82928155978289, 12.437896728515625),
+            L.latLng(41.82992111131576, 12.528877258300783)
+        ];
+        kiepertLayer = L.distortableImageOverlay(url, {
+            corners: corners,
             opacity: 1, editable: false, mode: 'lock'
         }).on('load', () => hideLoader());
         l = kiepertLayer;
