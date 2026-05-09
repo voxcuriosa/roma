@@ -444,14 +444,19 @@ function setupEventListeners() {
         }
     });
 
-    // About Modal
+    // About Modal Triggers
     const aboutBtn = document.getElementById('about-me-btn');
+    const headerAboutBtn = document.getElementById('header-about-trigger');
     const aboutModal = document.getElementById('about-modal');
     const closeAbout = document.getElementById('close-about');
-    if (aboutBtn) aboutBtn.onclick = () => {
+
+    const openAbout = () => {
         aboutModal.style.display = 'flex';
         document.getElementById('layers-menu').classList.remove('show');
     };
+
+    if (aboutBtn) aboutBtn.onclick = openAbout;
+    if (headerAboutBtn) headerAboutBtn.onclick = openAbout;
     if (closeAbout) closeAbout.onclick = () => aboutModal.style.display = 'none';
 
     window.onclick = (e) => {
@@ -632,7 +637,7 @@ function populateCategoryDropdown() {
     const categories = [...new Set(allCategories)].filter(Boolean).sort();
     
     // Clear existing (except first)
-    select.innerHTML = '<option value="">Alle Kategorier</option>';
+    select.innerHTML = '<option value="">All Categories</option>';
     
     categories.forEach(cat => {
         const opt = document.createElement('option');
