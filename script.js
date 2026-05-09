@@ -166,6 +166,13 @@ function initMap() {
     map.on('moveend', updateURL);
     map.on('zoomend', updateURL);
 
+    // Show loader on zoom if using tiled layers
+    map.on('zoomstart', () => {
+        if (activeLayerIndex === 2 || activeLayerIndex === 4) {
+            showLoader();
+        }
+    });
+
     const mapSlider = document.getElementById('map-opacity-slider');
     mapSlider.oninput = (e) => {
         const v = e.target.value / 100;
@@ -500,8 +507,14 @@ function setMapLayer(index) {
         const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer];
         const l = layers[index];
         if (l) {
+            console.log("Switching to layer index:", index);
             showLoader();
             map.addLayer(l);
+            
+            // If it's a distortable image and already loaded, hide loader quickly
+            if (l.getElement && l.getElement()) {
+                setTimeout(hideLoader, 500);
+            }
         }
     }
 
