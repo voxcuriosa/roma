@@ -111,19 +111,8 @@ function initMap() {
     satelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', { attribution: 'Google Satellite' });
     topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { attribution: 'OpenTopoMap' });
 
-    // Lanciani Tiles (Recursive Load)
-    const lParts = [];
-    const minLat = 41.8704, maxLat = 41.9136, minLng = 12.4403, maxLng = 12.5266;
-    const latStep = (maxLat - minLat) / 4, lngStep = (maxLng - minLng) / 4;
-    for (let r = 0; r < 4; r++) {
-        for (let c = 0; c < 4; c++) {
-            const b = [[maxLat - (r + 1) * latStep, minLng + c * lngStep], [maxLat - r * latStep, minLng + (c + 1) * lngStep]];
-            const part = L.imageOverlay(`lanciani_v5_${r}_${c}.webp?v=1`, b);
-            part.on('load', checkAllLoaded);
-            lParts.push(part);
-        }
-    }
-    lancianiLayer = L.layerGroup(lParts);
+    // Lanciani will be lazy-loaded in setMapLayer
+    lancianiLayer = L.layerGroup();
 
     // Falda (Distortable)
     const faldaCorners = [
@@ -454,7 +443,24 @@ function showLoader() {
 }
 function hideLoader() { document.getElementById('map-loader').style.display = 'none'; }
 
+function loadLanciani() {
+    if (lancianiLayer.getLayers().length > 0) return; // Already loaded
+
+    const minLat = 41.8704, maxLat = 41.9136, minLng = 12.4403, maxLng = 12.5266;
+    const latStep = (maxLat - minLat) / 4, lngStep = (maxLng - minLng) / 4;
+    
+    for (let r = 0; r < 4; r++) {
+        for (let c = 0; c < 4; c++) {
+            const b = [[maxLat - (r + 1) * latStep, minLng + c * lngStep], [maxLat - r * latStep, minLng + (c + 1) * lngStep]];
+            const part = L.imageOverlay(`lanciani_v5_${r}_${c}.webp?v=1`, b);
+            part.on('load', checkAllLoaded);
+            lancianiLayer.addLayer(part);
+        }
+    }
+}
+
 function setMapLayer(index) {
+    if (index === 2) loadLanciani();
     const histLayers = [lancianiLayer, faldaLayer, nolliLayer, topoLayer];
     histLayers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
 
