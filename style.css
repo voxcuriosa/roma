@@ -470,11 +470,17 @@ body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-ser
     .sidebar-header h1 { font-size: 1.8rem; }
 
     #custom-attribution {
-        bottom: 35px;
+        bottom: 50px;
         right: 10px;
         max-width: 180px;
         font-size: 0.7rem;
         padding: 4px 10px;
+    }
+
+    .map-status-toast {
+        bottom: 90px;
+        width: 220px;
+        font-size: 0.8rem;
     }
 }
 
