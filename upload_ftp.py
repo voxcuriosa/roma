@@ -6,8 +6,11 @@ FTP_USER = "cpjvfkip"
 FTP_PASS = "F2gw2FSXJcJLtk!"
 REMOTE_TARGET = "public_html/roma"
 
-# Added .user.ini and .htaccess to the list
-FILES_TO_UPLOAD = ["index.html", "script.js", "style.css"]
+FILES_TO_UPLOAD = [
+    "index.html", "script.js", "style.css", 
+    "georef.php", "save_georef.php", "admin_check.php", "upload.php",
+    "image_proxy.php", ".htaccess", ".user.ini"
+]
 DIRS_TO_UPLOAD = ["data", "assets"]
 
 def upload_file(ftp, local_path, filename):

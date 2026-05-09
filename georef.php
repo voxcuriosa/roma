@@ -144,10 +144,14 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 opacity: 0.5, editable: true
             }).addTo(map);
             
-            map.fitBounds(img.getBounds());
+            // Stable way to center
+            const centerLat = (config.corners[0].lat + config.corners[3].lat) / 2;
+            const centerLng = (config.corners[0].lng + config.corners[3].lng) / 2;
+            map.flyTo([centerLat, centerLng], 15);
+
             img.on('edit drag rotate scale', updateOutput);
             updateOutput();
-            showStatus("Kart lastet inn med nåværende hjørner. Lykke til med finjusteringen!");
+            showStatus("Kart lastet inn. Bruk hjørnene for å finjustere.");
         }
 
         async function handleUpload(input) {
