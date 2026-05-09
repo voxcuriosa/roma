@@ -16,8 +16,8 @@ const layerInfo = {
 const historicalGlimpses = [
     {
         title: "The Colosseum (Veduta dell'Anfiteatro Flavio)",
-        artist: "GiovanniFILES_TO_UPLOAD = ["index.html", "script.js", "style.css"]
-DIRS_TO_UPLOAD = ["data", "assets/historical", "assets/falda", "assets/Platner"]
+        artist: "Giovanni Battista Piranesi (1776)",
+        image: "assets/historical/colosseum.jpg",
         description: "A dramatic etching showing the inner amphitheater in its romantic, ruined state before modern excavations. Piranesi's work helped define the 18th-century European imagination of Ancient Rome.",
         lat: 41.8902, lng: 12.4922,
         category: "Antique Etching",

@@ -8,10 +8,19 @@ REMOTE_TARGET = "public_html/roma"
 
 # Added .user.ini and .htaccess to the list
 FILES_TO_UPLOAD = ["index.html", "script.js", "style.css"]
-DIRS_TO_UPLOAD = ["data", "assets/historical", "assets/falda"]
+DIRS_TO_UPLOAD = ["data", "assets/historical", "assets/falda", "assets/Platner"]
 
 def upload_file(ftp, local_path, filename):
     try:
+        local_size = os.path.getsize(local_path)
+        try:
+            remote_size = ftp.size(filename)
+            if local_size == remote_size:
+                # print(f"Skipping (identical size): {filename}")
+                return
+        except:
+            pass # File doesn't exist on remote
+            
         with open(local_path, 'rb') as f:
             ftp.storbinary(f"STOR {filename}", f)
             print(f"Uploaded: {filename}")
