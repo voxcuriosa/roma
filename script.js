@@ -75,7 +75,6 @@ let measureMarkers = [];
 let measureLine = null;
 let tempLine = null;
 let measureArea = null;
-let activeLayerIndex = 0;
 
 function updateURL() {
     if (!map) return;
