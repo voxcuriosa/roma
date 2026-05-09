@@ -129,7 +129,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             if (!id) return;
             const configs = {
                 'falda': { path: 'assets/falda/falda.jpg', corners: [L.latLng(41.9211, 12.5042), L.latLng(41.8757, 12.5223), L.latLng(41.9111, 12.4345), L.latLng(41.8607, 12.4571)] },
-                'kiepert': { path: 'assets/Kiepert/11690011.jpg', corners: [L.latLng(41.9110, 12.4663), L.latLng(41.9110, 12.5188), L.latLng(41.8440, 12.4663), L.latLng(41.8440, 12.5188)] },
+                'kiepert': { path: 'assets/Kiepert/11690011.jpg', corners: [L.latLng(41.92629234083705, 12.437210083007814), L.latLng(41.923993394784745, 12.52896308898926), L.latLng(41.82928155978289, 12.437896728515625), L.latLng(41.82992111131576, 12.528877258300783)] },
                 'platner': { path: 'assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', corners: [L.latLng(41.9154, 12.4445), L.latLng(41.9150, 12.5237), L.latLng(41.8710, 12.4432), L.latLng(41.8714, 12.5260)] }
             };
             

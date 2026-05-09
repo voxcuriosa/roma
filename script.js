@@ -524,7 +524,12 @@ function setMapLayer(index) {
     } else if (index === 6) {
         if (kiepertLayer) map.removeLayer(kiepertLayer);
         kiepertLayer = L.distortableImageOverlay('assets/Kiepert/11690011.jpg', {
-            corners: [L.latLng(41.9110, 12.4663), L.latLng(41.9110, 12.5188), L.latLng(41.8440, 12.4663), L.latLng(41.8440, 12.5188)],
+            corners: [
+                L.latLng(41.92629234083705, 12.437210083007814),
+                L.latLng(41.923993394784745, 12.52896308898926),
+                L.latLng(41.82928155978289, 12.437896728515625),
+                L.latLng(41.82992111131576, 12.528877258300783)
+            ],
             opacity: 1, editable: false, mode: 'lock'
         }).on('load', () => hideLoader());
         l = kiepertLayer;
