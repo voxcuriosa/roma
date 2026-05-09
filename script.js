@@ -512,7 +512,7 @@ function setMapLayer(index) {
     } else if (index === 5) {
         if (platnerLayer) map.removeLayer(platnerLayer);
         platnerLayer = L.distortableImageOverlay('assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
-            corners: [L.latLng(41.9140, 12.4550), L.latLng(41.8780, 12.5180), L.latLng(41.9080, 12.4400), L.latLng(41.8650, 12.4900)],
+            corners: [L.latLng(41.9154, 12.4445), L.latLng(41.9150, 12.5237), L.latLng(41.8710, 12.4432), L.latLng(41.8714, 12.5260)],
             opacity: 1, editable: false, mode: 'lock'
         }).on('load', () => hideLoader());
         l = platnerLayer;
