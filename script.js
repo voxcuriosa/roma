@@ -150,7 +150,7 @@ function initMap() {
         L.latLng(41.8440, 12.4663),
         L.latLng(41.8440, 12.5188)
     ];
-    kiepertLayer = L.distortableImageOverlay('assets/kiepert/11690011.jpg', {
+    kiepertLayer = L.distortableImageOverlay('assets/Kiepert/11690011.jpg', {
         corners: kiepertCorners, opacity: 1, editable: false, mode: 'lock'
     });
     kiepertLayer.on('load', () => hideLoader());
