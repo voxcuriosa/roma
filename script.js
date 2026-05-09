@@ -9,6 +9,7 @@ const layerInfo = {
     2: "<strong>Rodolfo Lanciani (1901)</strong><br>Forma Urbis Romae. A monumental work mapping ancient ruins onto the 19th-century city. Source: <a href='https://mappingrome.com/' target='_blank'>Mapping Rome project</a>.",
     3: "<strong>G.B. Falda (1676)</strong><br>Nova Pianta di Roma. A detailed bird's-eye view of Baroque Rome. Source: <a href='https://scholarsbank.uoregon.edu/xmlui/handle/1794/23308' target='_blank'>University of Oregon</a>.",
     4: "<strong>Giambattista Nolli (1748)</strong><br>Nuova Pianta di Roma. The first accurate ground-plan map of the city. Source: <a href='http://nolli.uoregon.edu/' target='_blank'>Nolli Map Website</a>.",
+    6: "<strong>Heinrich Kiepert (1892)</strong><br>Roma urbs ab Augusti Imp. tempore. A scholarly reconstruction of Imperial Rome. Source: <a href='https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~23555~850020' target='_blank'>David Rumsey Collection</a>.",
     5: "<strong>Samuel Ball Platner (1911)</strong><br>Ancient Rome. From 'The Topography and Monuments of Ancient Rome'. Source: <a href='https://commons.wikimedia.org/w/index.php?curid=954235' target='_blank'>Wikimedia (Public Domain)</a>."
 };
 
@@ -61,11 +62,10 @@ const historicalGlimpses = [
     }
 ];
 
-let map, pointsData = [], markers = [];
 let activeLayerIndex = 0;
 let piranesiMetadata = [];
 let vintageMetadata = [];
-let satelliteLayer, topoLayer, lancianiLayer, faldaLayer, nolliLayer, platnerLayer;
+let satelliteLayer, topoLayer, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer;
 let userMarker, lastUserLatLng, isFollowingUser = false;
 let selectedCategory = "";
 let showAllPoints = true;
@@ -143,6 +143,18 @@ function initMap() {
     });
     platnerLayer.on('load', () => hideLoader());
 
+    // Kiepert (Distortable)
+    const kiepertCorners = [
+        L.latLng(41.9110, 12.4663),
+        L.latLng(41.9110, 12.5188),
+        L.latLng(41.8440, 12.4663),
+        L.latLng(41.8440, 12.5188)
+    ];
+    kiepertLayer = L.distortableImageOverlay('assets/kiepert/11690011.jpg', {
+        corners: kiepertCorners, opacity: 1, editable: false, mode: 'lock'
+    });
+    kiepertLayer.on('load', () => hideLoader());
+
     map = L.map('map', {
         center: [41.8902, 12.4922], zoom: 16,
         layers: [satelliteLayer], zoomControl: false,
@@ -157,7 +169,7 @@ function initMap() {
     const mapSlider = document.getElementById('map-opacity-slider');
     mapSlider.oninput = (e) => {
         const v = e.target.value / 100;
-        [lancianiLayer, faldaLayer, nolliLayer, platnerLayer].forEach(l => {
+        [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer].forEach(l => {
             if (map.hasLayer(l)) {
                 if (l.setOpacity) l.setOpacity(v);
                 else if (l.eachLayer) l.eachLayer(part => part.setOpacity && part.setOpacity(v));
@@ -474,7 +486,7 @@ function loadLanciani() {
 
 function setMapLayer(index) {
     if (index === 2) loadLanciani();
-    const histLayers = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, topoLayer];
+    const histLayers = [lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer, topoLayer];
     histLayers.forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
 
     activeLayerIndex = index;
@@ -485,13 +497,13 @@ function setMapLayer(index) {
     } else if (index === 1) {
         map.addLayer(topoLayer);
     } else {
-        const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer];
+        const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer];
         if (layers[index]) map.addLayer(layers[index]);
     }
 
     // Apply current opacity
     const v = document.getElementById('map-opacity-slider').value / 100;
-    const currentLayer = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer][index];
+    const currentLayer = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer][index];
     if (currentLayer) {
         if (currentLayer.setOpacity) currentLayer.setOpacity(v);
         else if (currentLayer.eachLayer) currentLayer.eachLayer(p => p.setOpacity && p.setOpacity(v));

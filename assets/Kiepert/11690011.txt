@@ -1,0 +1,50 @@
+Author	Kiepert, Heinrich, 1818-1899
+Author	Rand McNally and Company
+Date	1892
+Short Title	Tab. IX. Roma urbs
+Publisher	Rand, McNally & Co.
+Publisher Location	Chicago
+Publisher Location	Berlin
+Publisher	D. Reimer
+Publisher Location	Chicago
+Publisher Location	Berlin
+Type	Atlas Map
+Obj Height cm	34
+Obj Width cm	43
+Scale 1	20,000
+Note	Outline color map. Relief shown by hachures. Shows buildings, landmarks, roads, rivers and mountains. Included index.
+Country	Italy
+City	Rome (Italy)
+Subject	Classical
+Full Title	Roma urbs ab Augusti Imp. tempore cum muris ab Aureliano et Honorio conditis. Copyright 1892 by Dietrich Reimer (Ernst Vohsen). Geographische Verlagshandlung Dietrich Reimer (E. Vohsen) Berlin. (to accompany) Atlas antiquus ... Rand, McNally & Co., Chicago and New York. (insets) Forum Romanum quo statu tempore liberae reipublicae fuisse videtur. (with) Forum Romanum et fora Caesarum cum Capitolio et regione circumiacente quadruplici maioris tabulae modulo descripta. (with) Roma urbs tempore liberae reipublicae.
+List No	11690.011
+Series No	11
+Page No	Tab.IX
+Engraver or Printer	Reimer, Dietrich
+Engraver or Printer	Vohsen, Ernst
+Publication Author	Kiepert, Heinrich, 1818-1899
+Publication Author	Rand McNally and Company
+Pub Date	1892
+Pub Title	Atlas antiquus : Twelve maps of the ancient world for schools and colleges. By Dr. Henry Kiepert. Rand, McNally & Co., Chicago and New York.
+Pub Note	English edition of Kiepert's Ancient atlas, with 12 folded maps. Published by Rand McNally, Chicago, with 2 pages of text on ancient history and 27 pages of "accompanied index in English, contains all the ancient geographical names contained in the maps with explanation of their character ..." Maps are in Latin, copyrighted 1892, by Dietrich Reimer (Ernst Vohsen) Berlin. Engraved outline and full color maps, showing political and administrative boundaries, major cities, towns, roads, rivers, canals and mountains. Relief shown by hachures. Prime meridians are Paris and Greenwich. Bound in olive paper covers with black lettering "Atlas Antiquus by Henry Kiepert. Rand McNally & Co., Chicago and New York." Geographer Heinrich Kiepert (1818-1899) is generally considered to be one of the most important scholarly cartographers of the second half of the 19th century.
+Pub List No	11690.000
+Pub Type	Classical Atlas
+Pub Type	School Atlas
+Pub Maps	12
+Pub Height cm	37
+Pub Width cm	25
+Image No	11690011.jp2
+Download 1	<a href=https://www.davidrumsey.com/rumsey/download.pl?image=/179/11690011.jp2 target=_blank>Full Image Download in JP2 Format</a>
+Download 2	<a href="https://www.extensis.com/support/geoviewer-9" target="_blank">GeoViewer for JP2 and SID files</a>
+Authors	Kiepert, Heinrich, 1818-1899; Rand McNally and Company
+AI-Generated Summary	The work titled "Roma urbs ab Augusti Imp. tempore cum muris ab Aureliano et Honorio conditis" was created by Heinrich Kiepert alongside Rand McNally and Company. It is a map published in 1892, measuring 43 by 34 cm, and is part of the "Atlas Antiquus," published by Rand McNally & Co. and Dietrich Reimer (Ernst Vohsen) in Berlin. The map is an outline color map, showcasing the city of Rome during the time of Emperor Augustus, including the Aurelian and Honorian Walls.<br><br>Composition and Medium:<br>
+The map employs hachures to indicate relief, providing a sense of the topographical features of ancient Rome. It uses an outline color technique, with different colors likely representing various districts or significant boundaries within the city. The inscriptions and labels are in Latin, offering an authentic feel for the period it represents. The work is engraved, a common practice for maps of this era, ensuring precision and clarity in the depiction of details.<br><br>Style:<br>
+The style of the map is classical, reflecting the scholarly approach of the late 19th century in reconstructing ancient geographies. The use of hachures, a method of shading to indicate relief, is typical for maps from this period, providing a three-dimensional effect to the viewer. The map is highly detailed, emphasizing urban structures, roads, and geographical features, showcasing Kiepert’s reputation for precision and attention to detail.<br><br>Subject Matter:<br>
+The main subject of the map is the city of Rome, as it existed during the time of Emperor Augustus, highlighting significant landmarks and infrastructure. It features the Aurelian and Honorian Walls, which were crucial defensive structures built around the city. Notable areas such as the Forum Romanum and the Campus Martius are identified, reflecting their importance in Roman public life and military training, respectively.<br><br>Cultural and Historical Context:<br>
+The map provides a window into the classical world, illustrating the urban layout of Rome during its imperial zenith. This period was marked by significant developments in architecture, urban planning, and imperial administration. The inclusion of the Aurelian Walls references the later period of Rome, emphasizing the continued importance of the city as a central hub in the Roman Empire.<br><br>Notable Features:<br>
+- Forum Romanum: Depicted with detailed layouts, the forum was the heart of Roman public and political life.
+- Campus Martius: Shown as a sprawling area, it was used for military training and public gatherings.
+- Aurelian and Honorian Walls: These walls are significant as they represent the city's defense mechanisms in response to external threats during the late empire.
+- Buildings and Roads: The map carefully marks out roads and buildings, showing the structured urban planning of ancient Rome.<br><br>Significance:<br>
+This map serves as an educational tool, providing insights into the geography and urban planning of ancient Rome. It reflects Heinrich Kiepert's scholarly approach to classical cartography, aimed at academics and students interested in ancient history and geography. The atlas that includes this map was likely used in educational settings, given its detailed index and accompanying historical texts.<br><br>Publication Information:<br>
+This map is part of a series of 12 folded maps in the "Atlas Antiquus," which is an English edition of Kiepert's ancient atlas, published by Rand McNally, with input from Dietrich Reimer. The maps aim to provide a comprehensive view of ancient geographical locations with scholarly precision. The publication bears the Pub List No 11690.000 and the List No 11690.011, indicating its cataloging in the series.<br><br>In summary, this map is a reflection of late 19th-century scholarly efforts to reconstruct and represent the geography of ancient Rome. It combines detailed cartographic techniques with historical research to offer a comprehensive view of the city as it was during one of its most significant periods.
