@@ -16,8 +16,8 @@ const layerInfo = {
 const historicalGlimpses = [
     {
         title: "The Colosseum (Veduta dell'Anfiteatro Flavio)",
-        artist: "Giovanni Battista Piranesi (1776)",
-        image: "assets/historical/colosseum.jpg",
+        artist: "GiovanniFILES_TO_UPLOAD = ["index.html", "script.js", "style.css"]
+DIRS_TO_UPLOAD = ["data", "assets/historical", "assets/falda", "assets/Platner"]
         description: "A dramatic etching showing the inner amphitheater in its romantic, ruined state before modern excavations. Piranesi's work helped define the 18th-century European imagination of Ancient Rome.",
         lat: 41.8902, lng: 12.4922,
         category: "Antique Etching",
@@ -63,6 +63,8 @@ const historicalGlimpses = [
 
 let map, pointsData = [], markers = [];
 let activeLayerIndex = 0;
+let piranesiMetadata = [];
+let vintageMetadata = [];
 let satelliteLayer, topoLayer, lancianiLayer, faldaLayer, nolliLayer, platnerLayer;
 let userMarker, lastUserLatLng, isFollowingUser = false;
 let selectedCategory = "";
@@ -136,7 +138,7 @@ function initMap() {
         L.latLng(41.9080, 12.4400),
         L.latLng(41.8650, 12.4900)
     ];
-    platnerLayer = L.distortableImageOverlay('assets/falda/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
+    platnerLayer = L.distortableImageOverlay('assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', {
         corners: platnerCorners, opacity: 1, editable: false, mode: 'lock'
     });
     platnerLayer.on('load', () => hideLoader());

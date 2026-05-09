@@ -8,7 +8,7 @@ REMOTE_TARGET = "public_html/roma"
 
 # Added .user.ini and .htaccess to the list
 FILES_TO_UPLOAD = ["index.html", "script.js", "style.css"]
-DIRS_TO_UPLOAD = ["data", "assets/historical"]
+DIRS_TO_UPLOAD = ["data", "assets/historical", "assets/falda"]
 
 def upload_file(ftp, local_path, filename):
     try:
