@@ -529,9 +529,6 @@ function setMapLayer(index) {
         showLoader();
         map.addLayer(l);
         
-        // Ensure attribution is shown
-        updateAttribution(index);
-
         // Safety: If it's already loaded or doesn't fire 'load', hide after 2s
         setTimeout(hideLoader, 2000);
     }
@@ -561,9 +558,6 @@ function setMapLayer(index) {
     }
 
     updateURL();
-    document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
-    const items = document.querySelectorAll('.menu-item');
-    if (items[index]) items[index].classList.add('active');
 }
 
 async function fetchData() {
