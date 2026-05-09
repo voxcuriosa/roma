@@ -462,11 +462,11 @@ function checkAllLoaded() {
 }
 
 function showLoader() { 
-    document.getElementById('map-loader').style.display = 'flex'; 
-    // SAFETY TIMEOUT: Always hide after 8 seconds
-    setTimeout(hideLoader, 8000);
+    document.getElementById('map-status-toast').style.display = 'flex'; 
+    // SAFETY TIMEOUT: Always hide after 12 seconds for large maps
+    setTimeout(hideLoader, 12000);
 }
-function hideLoader() { document.getElementById('map-loader').style.display = 'none'; }
+function hideLoader() { document.getElementById('map-status-toast').style.display = 'none'; }
 
 function loadLanciani() {
     if (lancianiLayer.getLayers().length > 0) return; // Already loaded
@@ -498,7 +498,11 @@ function setMapLayer(index) {
         map.addLayer(topoLayer);
     } else {
         const layers = [null, null, lancianiLayer, faldaLayer, nolliLayer, platnerLayer, kiepertLayer];
-        if (layers[index]) map.addLayer(layers[index]);
+        const l = layers[index];
+        if (l) {
+            showLoader();
+            map.addLayer(l);
+        }
     }
 
     // Apply current opacity
