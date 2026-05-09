@@ -79,9 +79,9 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             <label style="display:block; margin-bottom:10px; font-size:0.8rem;">Velg eksisterende kart eller last opp nytt:</label>
             <select id="map-select" onchange="loadExistingMap(this.value)" style="width:100%; padding:10px; background:#1f2937; color:white; border:1px solid #374151; border-radius:4px; margin-bottom:10px;">
                 <option value="">-- Velg kart --</option>
-                <option value="assets/falda/falda.jpg">Falda (1676)</option>
-                <option value="assets/Kiepert/11690011.jpg">Kiepert (1892)</option>
-                <option value="assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg">Platner (1911)</option>
+                <option value="falda">Falda (1676)</option>
+                <option value="kiepert">Kiepert (1892)</option>
+                <option value="platner">Platner (1911)</option>
             </select>
             <div style="margin: 10px 0; font-size: 0.7rem; color: #94a3b8;">- ELLER -</div>
             <input type="file" id="file-upload" accept="image/*" onchange="handleUpload(this)" style="display:none">
@@ -125,25 +125,29 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             el.style.background = isError ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)';
             el.style.color = isError ? '#f87171' : '#34d399';
         }
-        function loadExistingMap(path) {
-            if (!path) return;
-            imgPath = path;
+        function loadExistingMap(id) {
+            if (!id) return;
+            const configs = {
+                'falda': { path: 'assets/falda/falda.jpg', corners: [L.latLng(41.9211, 12.5042), L.latLng(41.8757, 12.5223), L.latLng(41.9111, 12.4345), L.latLng(41.8607, 12.4571)] },
+                'kiepert': { path: 'assets/Kiepert/11690011.jpg', corners: [L.latLng(41.9110, 12.4663), L.latLng(41.9110, 12.5188), L.latLng(41.8440, 12.4663), L.latLng(41.8440, 12.5188)] },
+                'platner': { path: 'assets/Platner/The_Topography_and_Monuments_of_Ancient_Rome.jpg', corners: [L.latLng(41.9140, 12.4550), L.latLng(41.8780, 12.5180), L.latLng(41.9080, 12.4400), L.latLng(41.8650, 12.4900)] }
+            };
+            
+            const config = configs[id];
+            if (!config) return;
+
+            imgPath = config.path;
             if (img) map.removeLayer(img);
             
-            const center = map.getCenter();
             img = L.distortableImageOverlay(imgPath, {
-                corners: [
-                    L.latLng(center.lat + 0.005, center.lng - 0.005),
-                    L.latLng(center.lat + 0.005, center.lng + 0.005),
-                    L.latLng(center.lat - 0.005, center.lng - 0.005),
-                    L.latLng(center.lat - 0.005, center.lng + 0.005)
-                ],
+                corners: config.corners,
                 opacity: 0.5, editable: true
             }).addTo(map);
             
+            map.fitBounds(img.getBounds());
             img.on('edit drag rotate scale', updateOutput);
             updateOutput();
-            showStatus("Kart lastet inn. Du kan nå flytte på det.");
+            showStatus("Kart lastet inn med nåværende hjørner. Lykke til med finjusteringen!");
         }
 
         async function handleUpload(input) {
