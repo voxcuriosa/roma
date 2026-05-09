@@ -257,7 +257,11 @@ body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-ser
 .layers-menu { position: absolute; top: 20px; right: 80px; background: white; border-radius: 16px; width: 220px; display: none; z-index: 1000; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 .layers-menu.show { display: block; }
 .menu-item { padding: 15px 20px; color: #2c3e50; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
-.menu-item.active { background: #f1f2f6; font-weight: 700; color: var(--bg-sidebar); }
+.menu-divider { height: 1px; background: rgba(0,0,0,0.1); margin: 10px 15px; }
+.about-content { max-width: 500px; border-radius: 20px; border: 1px solid rgba(255,215,0,0.3); }
+.about-header { text-align: center; margin-bottom: 20px; }
+.about-icon { font-size: 3rem; color: #ffd700; margin-bottom: 10px; }
+.badge-primary { background: #ffd700; color: #000; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; display: inline-block; }
 
 .map-status-toast {
     position: absolute;

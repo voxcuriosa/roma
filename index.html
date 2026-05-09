@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/leaflet-distortableimage@0.21.7/dist/leaflet.distortableimage.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=32.0">
+    <link rel="stylesheet" href="style.css?v=33.0">
 </head>
 <body>
     <div id="app-container">
@@ -125,6 +125,9 @@
                 <div class="menu-item" data-layer="6"><i class="fas fa-mountain-sun"></i> Kiepert (1892)</div>
                 <div class="menu-item" data-layer="2"><i class="fas fa-map"></i> Lanciani (1901)</div>
                 <div class="menu-item" data-layer="5"><i class="fas fa-landmark"></i> Platner (1911)</div>
+                <div class="menu-divider"></div>
+                <div class="menu-item" id="edit-map-btn"><i class="fas fa-edit"></i> Finjuster Kart</div>
+                <div class="menu-item" id="about-me-btn"><i class="fas fa-user"></i> Om prosjektet</div>
             </div>
         </div>
     </div>
@@ -147,6 +150,24 @@
     </div>
 
     <!-- DETAIL MODAL -->
+    <!-- About Me Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content about-content">
+            <span id="close-about" class="close-btn"><i class="fas fa-times"></i></span>
+            <div class="about-header">
+                <i class="fas fa-chess-rook about-icon"></i>
+                <h2>Om Roma-prosjektet</h2>
+            </div>
+            <div class="modal-body">
+                <p>Velkommen til mitt interaktive Roma-kart! Dette prosjektet er utviklet for å gjøre byens rike historie mer tilgjengelig og visuell.</p>
+                <p>Jeg er historielærer, Roma-entusiast og hobbyutvikler som brenner for å kombinere gammel kunnskap med moderne teknologi.</p>
+                <div class="menu-divider" style="margin: 20px 0;"></div>
+                <p><strong>Kontakt:</strong> <a href="mailto:christian@voxcuriosa.no" style="color: #ffd700;">christian@voxcuriosa.no</a></p>
+                <p><em>Christian Borchgrevink-Vigeland</em></p>
+            </div>
+        </div>
+    </div>
+
     <div id="detail-modal" class="modal">
         <div class="modal-content">
             <span id="close-modal" class="close-btn"><i class="fas fa-times"></i></span>
@@ -180,6 +201,6 @@
             });
         }
     </script>
-    <script src="script.js?v=32.0"></script>
+    <script src="script.js?v=33.0"></script>
 </body>
 </html>
