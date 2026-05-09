@@ -62,6 +62,7 @@ const historicalGlimpses = [
     }
 ];
 
+let map, pointsData = [], markers = [];
 let activeLayerIndex = 0;
 let piranesiMetadata = [];
 let vintageMetadata = [];
