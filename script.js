@@ -715,7 +715,7 @@ function updateMarkers() {
         let markerIcon;
         if (p.category === 'Walking Tour Video') {
             markerIcon = L.icon({ 
-                iconUrl: 'assets/icons/icon-video.png', 
+                iconUrl: 'assets/icons/icon-video-v4.png', 
                 iconSize: [32, 32] 
             });
         } else {
@@ -734,7 +734,7 @@ function updateMarkers() {
         
         let iconHTML;
         if (p.category === 'Walking Tour Video') {
-            iconHTML = `<img src="assets/icons/icon-video.png" style="width: 24px;">`;
+            iconHTML = `<img src="assets/icons/icon-video-v4.png" style="width: 24px;">`;
         } else {
             iconHTML = `<img src="${p.icon || 'assets/icons/icon-1.png'}" style="width: 24px;">`;
         }
