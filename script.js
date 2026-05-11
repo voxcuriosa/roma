@@ -698,8 +698,8 @@ function updateMarkers() {
             const leafletCoords = p.geometry.coordinates[0].map(c => [c[1], c[0]]);
             const poly = L.polygon(leafletCoords, {
                 color: p.color || '#ff0000',
-                fillColor: p.color || '#ff0000',
-                fillOpacity: 0.3,
+                fillColor: 'transparent',
+                fillOpacity: 0,
                 weight: 2
             }).addTo(map);
             poly.on('click', () => showDetails(p));
@@ -712,19 +712,37 @@ function updateMarkers() {
             markerPos = [p.lat, p.lng];
         }
 
-        const m = L.marker(markerPos, { 
-            icon: L.icon({ 
+        let markerIcon;
+        if (p.category === 'Walking Tour Video') {
+            markerIcon = L.divIcon({
+                className: 'custom-video-icon',
+                html: '<div class="marker-circle"><i class="fas fa-video"></i></div>',
+                iconSize: [32, 32],
+                iconAnchor: [16, 16]
+            });
+        } else {
+            markerIcon = L.icon({ 
                 iconUrl: p.isHistorical ? 'assets/icons/icon-7.png' : (p.icon || 'assets/icons/icon-1.png'), 
                 iconSize: [32, 32] 
-            }) 
-        }).addTo(map);
+            });
+        }
+
+        const m = L.marker(markerPos, { icon: markerIcon }).addTo(map);
         m.on('click', () => showDetails(p));
         markers.push(m);
 
         const item = document.createElement('div');
         item.className = 'location-item';
+        
+        let iconHTML;
+        if (p.category === 'Walking Tour Video') {
+            iconHTML = `<div class="marker-circle" style="width:24px; height:24px;"><i class="fas fa-video" style="font-size:10px;"></i></div>`;
+        } else {
+            iconHTML = `<img src="${p.icon || 'assets/icons/icon-1.png'}" style="width: 24px;">`;
+        }
+
         item.innerHTML = `
-            <img src="${p.icon || 'assets/icons/icon-1.png'}" style="width: 24px;">
+            ${iconHTML}
             <div class="location-info"><h3>${p.title}</h3><span class="category-small">${p.category}</span></div>
         `;
         item.onclick = () => { 
