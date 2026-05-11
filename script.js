@@ -62,7 +62,7 @@ const historicalGlimpses = [
     }
 ];
 
-let map, pointsData = [], markers = [];
+let map, pointsData = [], walkingTourData = [], markers = [], polygons = [];
 let activeLayerIndex = 0;
 let piranesiMetadata = [];
 let vintageMetadata = [];
@@ -615,8 +615,21 @@ async function fetchData() {
         const res = await fetch('data/roma_points.json');
         const d = await res.json();
         pointsData = d.features.filter(f => f.geometry && f.geometry.type === 'Point').map(f => ({
-            ...f.properties, lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0], title: f.properties.name
+            ...f.properties, lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0], title: f.properties.name, geometry: f.geometry
         }));
+
+        try {
+            const wRes = await fetch('data/walking_tour.json');
+            const wData = await wRes.json();
+            walkingTourData = wData.features.map(f => ({
+                ...f.properties, 
+                title: f.properties.name,
+                geometry: f.geometry,
+                // For points, we set lat/lng directly for ease of use in markers
+                lat: f.geometry.type === 'Point' ? f.geometry.coordinates[1] : null,
+                lng: f.geometry.type === 'Point' ? f.geometry.coordinates[0] : null
+            }));
+        } catch(e) { console.warn("Walking tour data not found."); }
         
         updateMarkers();
         populateCategoryDropdown();
@@ -632,6 +645,7 @@ function populateCategoryDropdown() {
     // Get unique categories from both sources
     const allCategories = [
         ...pointsData.map(p => p.category),
+        ...walkingTourData.map(p => p.category),
         ...historicalGlimpses.map(g => g.category)
     ];
     const categories = [...new Set(allCategories)].filter(Boolean).sort();
@@ -649,15 +663,18 @@ function populateCategoryDropdown() {
 
 function updateMarkers() {
     markers.forEach(m => map.removeLayer(m));
+    polygons.forEach(p => map.removeLayer(p));
     markers = [];
+    polygons = [];
     const list = document.getElementById('locations-list');
     list.innerHTML = '';
     
     const searchTerm = document.getElementById('search-input')?.value.toLowerCase() || '';
 
-    // Combine pointsData with historicalGlimpses
+    // Combine pointsData with historicalGlimpses and walkingTourData
     const allPoints = [
         ...pointsData,
+        ...walkingTourData,
         ...historicalGlimpses.map(g => ({ ...g, isHistorical: true }))
     ];
 
@@ -665,19 +682,37 @@ function updateMarkers() {
         // --- FILTER LOGIC ---
         let visible = true;
 
-        // If "Show All" is NOT checked, we must match selected category OR search
         if (!showAllPoints) {
             visible = false;
             if (selectedCategory && p.category === selectedCategory) visible = true;
             if (searchTerm && p.title.toLowerCase().includes(searchTerm)) visible = true;
         } else {
-            // "Show All" is checked - filter only by search if present
             if (searchTerm && !p.title.toLowerCase().includes(searchTerm)) visible = false;
         }
 
         if (!visible) return;
 
-        const m = L.marker([p.lat, p.lng], { 
+        let markerPos;
+        if (p.geometry && p.geometry.type === 'Polygon') {
+            // Swap coordinates for Leaflet [[lat, lng], ...]
+            const leafletCoords = p.geometry.coordinates[0].map(c => [c[1], c[0]]);
+            const poly = L.polygon(leafletCoords, {
+                color: p.color || '#ff0000',
+                fillColor: p.color || '#ff0000',
+                fillOpacity: 0.3,
+                weight: 2
+            }).addTo(map);
+            poly.on('click', () => showDetails(p));
+            polygons.push(poly);
+            
+            // For the list and marker interaction, use the polygon center
+            const bounds = poly.getBounds();
+            markerPos = bounds.getCenter();
+        } else {
+            markerPos = [p.lat, p.lng];
+        }
+
+        const m = L.marker(markerPos, { 
             icon: L.icon({ 
                 iconUrl: p.isHistorical ? 'assets/icons/icon-7.png' : (p.icon || 'assets/icons/icon-1.png'), 
                 iconSize: [32, 32] 
@@ -685,13 +720,17 @@ function updateMarkers() {
         }).addTo(map);
         m.on('click', () => showDetails(p));
         markers.push(m);
+
         const item = document.createElement('div');
         item.className = 'location-item';
         item.innerHTML = `
             <img src="${p.icon || 'assets/icons/icon-1.png'}" style="width: 24px;">
             <div class="location-info"><h3>${p.title}</h3><span class="category-small">${p.category}</span></div>
         `;
-        item.onclick = () => { map.flyTo([p.lat, p.lng], 18); showDetails(p); };
+        item.onclick = () => { 
+            map.flyTo(markerPos, 18); 
+            showDetails(p); 
+        };
         list.appendChild(item);
     });
 }
