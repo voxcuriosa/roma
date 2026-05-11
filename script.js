@@ -714,11 +714,9 @@ function updateMarkers() {
 
         let markerIcon;
         if (p.category === 'Walking Tour Video') {
-            markerIcon = L.divIcon({
-                className: 'custom-video-icon',
-                html: '<div class="marker-circle"><i class="fas fa-video"></i></div>',
-                iconSize: [32, 32],
-                iconAnchor: [16, 16]
+            markerIcon = L.icon({ 
+                iconUrl: 'assets/icons/icon-video.png', 
+                iconSize: [32, 32] 
             });
         } else {
             markerIcon = L.icon({ 
@@ -736,7 +734,7 @@ function updateMarkers() {
         
         let iconHTML;
         if (p.category === 'Walking Tour Video') {
-            iconHTML = `<div class="marker-circle" style="width:24px; height:24px;"><i class="fas fa-video" style="font-size:10px;"></i></div>`;
+            iconHTML = `<img src="assets/icons/icon-video.png" style="width: 24px;">`;
         } else {
             iconHTML = `<img src="${p.icon || 'assets/icons/icon-1.png'}" style="width: 24px;">`;
         }
