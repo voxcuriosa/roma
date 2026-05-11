@@ -473,13 +473,14 @@ function setupEventListeners() {
 function setupCookieBanner() {
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
     
-    if (!banner || !acceptBtn) return;
+    if (!banner || !acceptBtn || !declineBtn) return;
 
     // Check if consent was already given
-    const hasConsent = localStorage.getItem('cookie-consent');
+    const consent = localStorage.getItem('cookie-consent');
     
-    if (!hasConsent) {
+    if (!consent) {
         // Show banner after a short delay for better UX
         setTimeout(() => {
             banner.classList.add('show');
@@ -489,6 +490,13 @@ function setupCookieBanner() {
     acceptBtn.onclick = () => {
         localStorage.setItem('cookie-consent', 'true');
         banner.classList.remove('show');
+        logVisit(); // Log visit now that we have consent
+    };
+
+    declineBtn.onclick = () => {
+        localStorage.setItem('cookie-consent', 'rejected');
+        banner.classList.remove('show');
+        // Do NOT log visit
     };
 }
 
@@ -880,7 +888,10 @@ async function logVisit() {
 
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {
-    logVisit(); // Priority 1: Log the visit immediately
+    // Only log visit if consent was previously given
+    if (localStorage.getItem('cookie-consent') === 'true') {
+        logVisit();
+    }
     initMap();  // Priority 2: Initialize the map interface
 });
 
