@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rome Interactive Historical Map</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the rich history of Ancient Rome with our interactive historical map. Discover monuments, ruins, and explore layers of historical maps from 1676 to 1911.">
+    <meta name="keywords" content="Rome, Ancient Rome, Historical Map, Interactive Map, Lanciani, Nolli, Falda, Piranesi, Archaeology, Digital Humanities">
+    <meta name="author" content="Christian Borchgrevink-Vigeland">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://voxcuriosa.no/roma/">
+    <meta property="og:title" content="Rome Interactive Historical Map">
+    <meta property="og:description" content="Discover the layers of history in the Eternal City. Explore monuments, vintage maps, and Piranesi's Rome in this interactive experience.">
+    <meta property="og:image" content="https://voxcuriosa.no/roma/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://voxcuriosa.no/roma/">
+    <meta property="twitter:title" content="Rome Interactive Historical Map">
+    <meta property="twitter:description" content="Discover the layers of history in the Eternal City. Explore monuments, vintage maps, and Piranesi's Rome in this interactive experience.">
+    <meta property="twitter:image" content="https://voxcuriosa.no/roma/assets/og-image.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Leaflet -->
@@ -19,7 +38,7 @@
     <script src="https://unpkg.com/leaflet-distortableimage@0.21.7/dist/leaflet.distortableimage.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=34.0">
+    <link rel="stylesheet" href="style.css?v=35.0">
 </head>
 <body>
     <div id="app-container">
@@ -112,7 +131,7 @@
 
             <div id="map-status-toast" class="map-status-toast">
                 <i class="fas fa-spinner fa-spin"></i>
-                <span>Laster bilder...</span>
+                <span>Loading images...</span>
             </div>
 
             <div id="measure-hint" class="measure-toast">
@@ -218,6 +237,17 @@
             });
         }
     </script>
-    <script src="script.js?v=46.0"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite cookie-icon"></i>
+            <p>We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+            <div class="cookie-actions">
+                <button id="accept-cookies" class="cookie-btn-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=47.0"></script>
 </body>
 </html>

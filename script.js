@@ -459,12 +459,36 @@ function setupEventListeners() {
     if (headerAboutBtn) headerAboutBtn.onclick = openAbout;
     if (closeAbout) closeAbout.onclick = () => aboutModal.style.display = 'none';
 
+    setupCookieBanner();
+
     window.onclick = (e) => {
         if (e.target === aboutModal) aboutModal.style.display = 'none';
         if (e.target === document.getElementById('detail-modal')) document.getElementById('detail-modal').style.display = 'none';
         if (!e.target.closest('.layers-container')) {
             document.getElementById('layers-menu').classList.remove('show');
         }
+    };
+}
+
+function setupCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    
+    if (!banner || !acceptBtn) return;
+
+    // Check if consent was already given
+    const hasConsent = localStorage.getItem('cookie-consent');
+    
+    if (!hasConsent) {
+        // Show banner after a short delay for better UX
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 1500);
+    }
+
+    acceptBtn.onclick = () => {
+        localStorage.setItem('cookie-consent', 'true');
+        banner.classList.remove('show');
     };
 }
 

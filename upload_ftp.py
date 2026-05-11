@@ -9,7 +9,8 @@ REMOTE_TARGET = "public_html/roma"
 FILES_TO_UPLOAD = [
     "index.html", "script.js", "style.css", 
     "georef.php", "save_georef.php", "admin_check.php", "upload.php",
-    "image_proxy.php", ".htaccess", ".user.ini"
+    "image_proxy.php", ".htaccess", ".user.ini",
+    "robots.txt", "sitemap.xml"
 ]
 DIRS_TO_UPLOAD = ["data", "assets"]
 
